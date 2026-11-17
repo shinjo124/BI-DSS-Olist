@@ -12,7 +12,7 @@ The source repository is [shinjo124/BI-DSS-Olist](https://github.com/shinjo124/B
 
 ## Decisions
 
-- The team has two members and no fixed deadline. Use roles A and B until the members assign names.
+- The team has two members and no fixed deadline. **A is the user/project owner; B is Kiet.** This mapping follows the agreed work split and the SQL/SSIS environment verified on the project owner's machine.
 - Keep Olist and the 10 questions as the project direction. The team may revise schema, measures, or MDX when the outline has a defect, and should record the reason.
 - Implement all 10 questions with manual SSAS analysis and Power BI. The team target is at least three MDX questions and three Excel Pivot analyses; these counts are team targets, not explicit assignment requirements.
 - For questions 4 and 10, keep each `payment_type` separate and sum actual `payment_value` rows. An order paid through multiple methods contributes to each method according to its payment rows. Do not select a primary method or collapse methods into an “All” bucket.
@@ -34,7 +34,7 @@ Each teammate must check their own SQL Server, SSIS, SSAS Multidimensional, Powe
 
 ## Remaining work
 
-1. Assign real names to A and B. Have another member download the Drive archive and verify its hash.
+1. Have Kiet download the Drive archive and verify its hash.
 2. Implement staging, warehouse, and SSIS. Validate row counts, keys, totals, and idempotent reload behavior against the profile.
 3. Build and process the SSAS cube. Prove the many-to-many and filter-context behavior, then implement Power BI, MDX, and PivotTable analyses.
 4. Train both mining models with leakage-aware features and time-based evaluation. Record the baseline, metrics, and limitations.

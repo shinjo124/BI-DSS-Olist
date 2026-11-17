@@ -1,6 +1,6 @@
 # Olist BI Project Flow and Assignments
 
-The team has two members. A and B are role labels; assign names later. This is the agreed starting split. Rebalance after the actual workload is visible. No deadline has been set, so stages show dependencies rather than dates. Each person prepares evidence and report content for their work; both cross-review.
+The team has two members: **A is the user/project owner; B is Kiet.** This is the agreed starting split, based on the verified SQL/SSIS setup on A's machine. Rebalance if the actual workload or availability requires it. No deadline has been set, so stages show dependencies rather than dates. Each person prepares evidence and report content for their work; both cross-review.
 
 ## Project flow
 
@@ -29,7 +29,7 @@ flowchart TD
 
 Mining can run in parallel once the CSV and data rules are available; it does not depend on the cube. Choose MDX and Pivot questions that show different analysis patterns. The target of at least three for each is a team decision, not an explicit assignment count.
 
-## A's checklist
+## A — Project owner
 
 - [x] **Dataset profile:** the snapshot has been checked; results, hashes, and source conditions are in `2_Dataset/DATASET_PROFILE.md`.
 - [x] **Share dataset:** `olist-download.zip` is in `2_Dataset/` on the [team Drive](https://drive.google.com/drive/folders/1hKuZP3kOY0uqP6j4WBQASlRBnHyWJew3?usp=sharing). B should download it and confirm the hash. Keep raw CSVs out of Git.
@@ -40,7 +40,7 @@ Mining can run in parallel once the CSV and data rules are available; it does no
 - [ ] **MDX:** choose at least three questions with B; A writes and runs at least one query and reviews B's results. The team does not need to implement the first five questions if they are not selected.
 - [ ] **Report:** assemble the DOCX from both members' explanations, figures, run steps, and actual results; export PDF, stay within 100 pages, and send it to B for final review.
 
-## B's checklist
+## B — Kiet
 
 - [ ] **Analysis specification:** map the 10 outline questions to measures, dimensions, filters, and expected outputs. Agree on schema, grain, and calculations with A; hand the specification to A for warehouse work.
 - [ ] **SSAS and Power BI:** design the cube in parallel with ETL. After A's handoff, build and process it, reconcile measures with SQL, perform all 10 questions manually in SSAS, and build the Power BI report. Hand A the SSAS project, PBIX, connection instructions, results, and evidence; A cross-reviews.
@@ -50,11 +50,11 @@ Mining can run in parallel once the CSV and data rules are available; it does no
 
 ## Handoffs and joint checks
 
-1. **A → B:** provide the same CSV snapshot, source, and retrieval instructions; B confirms access.
+1. **A → B:** A provides the same CSV snapshot, source, and retrieval instructions; Kiet confirms access.
 2. **A + B:** record the 10-question specification, schema, and measure definitions before ETL and cube work split. Resolve order/item counting, reviews and delivery metrics, multi-seller orders, and multiple payment methods.
-3. **A → B:** hand over the validated warehouse, schema, connection steps, and reconciliations for cube construction.
-4. **B → A:** hand over the processed cube, metadata, connection steps, and sample results for Pivot and MDX work.
+3. **A → B:** the project owner hands over the validated warehouse, schema, connection steps, and reconciliations to Kiet for cube construction.
+4. **B → A:** Kiet hands over the processed cube, metadata, connection steps, and sample results for Pivot and MDX work.
 5. **A + B:** reconcile all 10 SSAS and Power BI results; explain differences caused by filters, grain, or rounding. Reconcile the selected MDX and Pivot analyses too.
-6. **A + B:** provide report content, figures, and actual results. A assembles; B cross-reviews. Check the six submission folders, DOCX/PDF page limit, Drive link, and instructor access. Video is optional after required work.
+6. **A + B:** both provide report content, figures, and actual results. The project owner assembles; Kiet cross-reviews. Check the six submission folders, DOCX/PDF page limit, Drive link, and instructor access. Video is optional after required work.
 
 Git holds source and project documentation; Drive holds the dataset, videos, and submission package. Only one person should edit DOCX, PBIX, or Excel at a time; agree on the current version location. Do not commit passwords or machine-specific connection settings.

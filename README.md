@@ -1,4 +1,4 @@
-# Olist BI Final Project
+# Olist BI Project
 
 This repository contains the project handoff, dataset profile, warehouse and measure specification, and team plan for a two-person BI final project. The Olist data has been profiled, but the warehouse, SSIS package, SSAS cube, reports, and mining models have not yet been built. No deadline has been set.
 

@@ -1,43 +1,43 @@
-# Bàn giao — 17/11/2026
+# Project Handoff — 17 November 2026
 
-## Mục tiêu và yêu cầu
+## Goal and submission requirements
 
-Nhóm hai người cần hoàn thành đồ án BI. Theo yêu cầu người dùng cung cấp: báo cáo tối đa 100 trang mô tả chọn dữ liệu và SSIS; schema, xây cube, phân tích thủ công và báo cáo 10 câu với SSAS/Power BI; phân tích bằng MDX và Excel Pivot; data mining với 2 thuật toán. Nộp link Google Drive, chia sẻ `phungntk@uit.edu.vn`, gồm báo cáo DOCX/PDF, dataset, project SSIS, SSAS kèm Power BI và Excel, mã mining; video là bonus. Đã xác minh cây thư mục Drive và `olist-download.zip` trong `2_Dataset/`; quyền tải của từng thành viên và quyền chia sẻ với giảng viên chưa xác minh.
+The two-person team must submit a report of no more than 100 pages covering the SSIS data selection and loading process, schema and cube construction, analysis and reports for 10 questions using SSAS and Power BI, MDX analysis, Excel PivotTable analysis, and two data-mining algorithms. The Google Drive submission must contain DOCX and PDF reports, the dataset, SSIS project, SSAS project with Power BI and Excel files, and mining code. Videos are optional. Share the submission with `phungntk@uit.edu.vn`.
 
-Repo source của nhóm là [shinjo124/BI-DSS-Olist](https://github.com/shinjo124/BI-DSS-Olist); local `origin` đã trỏ tới URL này. GitHub hiện trống và workspace chưa có commit/push.
+The team Drive folder is [BI-DSS Olist](https://drive.google.com/drive/folders/1hKuZP3kOY0uqP6j4WBQASlRBnHyWJew3?usp=sharing). Its six submission folders and `olist-download.zip` in `2_Dataset/` were verified. Access for each teammate and the instructor has not been verified.
 
-Đề cương Olist là nguồn làm việc ban đầu, không phải bằng chứng đã triển khai hoặc yêu cầu bổ sung của giảng viên. File gốc được sao chép nguyên vẹn vào `references/`. Yêu cầu dán ở trên là căn cứ đối chiếu; nếu có rubric chính thức khác cần đối chiếu lại.
+The Olist outline is a working proposal, not evidence of implementation or additional instructor requirements. The provided assignment requirements are the source of truth. See the [English working version](references/OLIST_OUTLINE_EN.md); the original source is preserved in `references/Original-Olist-Outline.docx`.
 
-## Quyết định đã chốt và phần còn mở
+The source repository is [shinjo124/BI-DSS-Olist](https://github.com/shinjo124/BI-DSS-Olist). Its About description and homepage link to the Drive have been set. The initial source and documentation commit is on `main`.
 
-- Đã xác nhận nhóm 2 người, chưa có deadline cụ thể. Các project SSIS/SSAS lab đã khảo sát chỉ là bài tham khảo, không phải đồ án.
-- Giữ Olist và 10 câu làm định hướng; được sửa schema, measure và MDX nếu cần, ghi lại thay đổi và lý do. Thiết kế logic đã chốt trong [THIET_KE_OLIST.md](THIET_KE_OLIST.md): ba measure group theo grain Sales/Order/Payment; SSAS many-to-many cần kiểm chứng khi triển khai.
-- Thực hiện 10 câu với SSAS thủ công và Power BI. Nhóm đặt mục tiêu ít nhất 3 câu MDX và 3 phân tích Excel; số 3 là quyết định nhóm, không phải yêu cầu được nêu trong đề. Điều chỉnh nếu giảng viên yêu cầu thêm.
-- Câu 4/10 giữ từng phương thức thanh toán riêng theo `payment_type`, cộng `payment_value` từ các dòng thực tế; đơn có nhiều phương thức đóng góp vào từng loại tương ứng. Không chọn phương thức chính hay gộp thành một nhóm “All”.
-- Dùng K-Means phân nhóm khách hàng và Random Forest dự đoán đánh giá thấp tại lúc giao hàng. Snapshot cho thấy chỉ 3,04% khách trong scope mua lặp; cohort Random Forest theo proxy `review_answer_timestamp >= delivered_customer_date` có 91.170 mẫu, 9,46% score ≤ 2. Chi tiết, giới hạn proxy và cách nhận diện snapshot ở [báo cáo kiểm tra dataset](2_Dataset/KIEM_TRA_DATASET.md).
-- [Phân công A/B](PHAN_CONG.md) là phương án ban đầu đã được người dùng chốt; tên thành viên và cân bằng khối lượng thực tế còn cần xác nhận. Ưu tiên phần bắt buộc trước video.
-- Nguồn dataset đã chọn là [Olist trên Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce). Snapshot đã tải và kiểm tra, nhận diện bằng SHA-256 trong [KIEM_TRA_DATASET.md](2_Dataset/KIEM_TRA_DATASET.md). Đã xác minh `olist-download.zip` có trong Drive/`2_Dataset/`; local ZIP/CSV vẫn bị Git ignore. Git lưu source và tài liệu; Drive lưu dataset, video và bộ nộp. Quyền tải của thành viên và quyền giảng viên chưa xác minh.
+## Decisions
 
-## Môi trường và tài nguyên
+- The team has two members and no fixed deadline. Use roles A and B until the members assign names.
+- Keep Olist and the 10 questions as the project direction. The team may revise schema, measures, or MDX when the outline has a defect, and should record the reason.
+- Implement all 10 questions with manual SSAS analysis and Power BI. The team target is at least three MDX questions and three Excel Pivot analyses; these counts are team targets, not explicit assignment requirements.
+- For questions 4 and 10, keep each `payment_type` separate and sum actual `payment_value` rows. An order paid through multiple methods contributes to each method according to its payment rows. Do not select a primary method or collapse methods into an “All” bucket.
+- Use K-Means for customer segmentation and Random Forest to predict low review scores at delivery time. For the Random Forest cohort, retain orders whose selected review has `review_answer_timestamp >= delivered_customer_date` as a proxy that the label was not yet observed. The timestamp is imperfect evidence of when the score became available.
+- Finish required deliverables before deciding whether to make the optional video.
+- The logic and measure contract are documented in [WAREHOUSE_DESIGN.md](WAREHOUSE_DESIGN.md). The three fact grains are Sales item, Order, and Payment row. SSAS many-to-many behavior still requires implementation testing.
 
-Mỗi thành viên cần tự kiểm tra SQL Server, SSIS, SSAS Multidimensional, Power BI Desktop, Excel và Python trên máy mình; phiên bản, instance, quyền truy cập và đường dẫn có thể khác nhau. Chưa có cấu hình chung hoặc hướng dẫn cài đặt đã kiểm chứng cho nhóm. Khi có project, ghi lại phiên bản cần thiết, cách cấu hình kết nối và cách chạy trên máy mới.
+## Dataset and evidence
 
-Đề cương đã có trong repo; dataset Olist có snapshot local và ZIP đã upload vào Drive/`2_Dataset/`; tài liệu môn học chưa được đưa vào repo. Chưa xác minh thành viên khác tải được file hoặc quyền chia sẻ với giảng viên.
+The Olist archive was downloaded from [Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce), profiled, and identified by SHA-256 in [2_Dataset/DATASET_PROFILE.md](2_Dataset/DATASET_PROFILE.md). The snapshot contains nine CSV files. The archive and extracted CSVs are excluded from Git; teammates should use the Drive copy and verify its hash.
 
-## Điểm thiết kế cần kiểm chứng
+The profile found 112,650 order-item rows, including 9,803 multi-item orders; 547 orders have multiple review rows; and 2,961 orders have multiple payment rows. Directly joining these tables can multiply measures, which is why the design separates grains. Only 2,887 of 94,983 customers in scope made repeat purchases (3.04%). The proposed Random Forest cohort contains 91,170 delivered orders with a selected review after the delivery timestamp proxy; 8,629 (9.46%) have a score of 1 or 2.
 
-- Quy ước grain và các chỉ số đã ghi ở `THIET_KE_OLIST.md`; khi triển khai cần kiểm thử số liệu, NULL, ngày, nạp lại và các trường hợp nhiều item/seller/payment.
-- SSAS many-to-many Product/Seller→Orders và tổ hợp Product+Seller cùng item là điểm kỹ thuật cần kiểm chứng; không công bố tổ hợp chưa chứng minh đúng.
-- Cohort mining đã profile theo snapshot. Tách train/test theo thời gian, chỉ dùng feature có sẵn tại thời điểm dự đoán và báo cáo giới hạn timestamp review.
+The snapshot figures are input-validation targets, not warehouse or cube results. No SSIS, SSAS, Power BI, Excel Pivot, or mining implementation has been verified yet.
 
-Các quy ước đã đối chiếu với snapshot CSV; việc xác nhận cuối cùng là bằng kết quả SQL/SSAS sau khi triển khai.
+## Environment and access
 
-## Việc tiếp theo
+Each teammate must check their own SQL Server, SSIS, SSAS Multidimensional, Power BI Desktop, Excel, and Python environment. Versions, instances, permissions, and paths can differ. There is no verified common setup guide yet; document portable connection settings and run instructions with each deliverable.
 
-1. Điền tên A/B; nhờ thành viên khác tải ZIP từ Drive/`2_Dataset/` và đối chiếu hash.
-2. Dùng các quy ước và expected totals trong [thiết kế warehouse](THIET_KE_OLIST.md) làm hợp đồng triển khai; ghi lại nếu dữ liệu/chứng cứ mới buộc phải đổi.
-3. Dựng warehouse/SSIS và kiểm tra tính lặp; sau đó build/process SSAS, chứng minh many-to-many/filter context rồi tạo report và Pivot.
-4. Thực hiện hai thuật toán mining theo cohort và đặc trưng hợp lệ; ghi cách chia dữ liệu, baseline, đánh giá và kết quả thật.
-5. Gom minh chứng, viết DOCX/PDF không quá 100 trang, kiểm tra cấu trúc nộp, quyền chia sẻ Drive và link. Video làm sau phần bắt buộc nếu nhóm chọn.
+## Remaining work
 
-Không dựng số liệu, ảnh hay kết quả chạy. Trước khi chạy thao tác xóa/nạp, deploy hoặc process trên máy thật, xác định rõ mục tiêu và ảnh hưởng; không ghi đè dữ liệu lab. Khi có sản phẩm, cập nhật trạng thái, đường dẫn tương đối và cách xác minh vào đây hoặc README.
+1. Assign real names to A and B. Have another member download the Drive archive and verify its hash.
+2. Implement staging, warehouse, and SSIS. Validate row counts, keys, totals, and idempotent reload behavior against the profile.
+3. Build and process the SSAS cube. Prove the many-to-many and filter-context behavior, then implement Power BI, MDX, and PivotTable analyses.
+4. Train both mining models with leakage-aware features and time-based evaluation. Record the baseline, metrics, and limitations.
+5. Cross-check results, collect real evidence, produce the DOCX/PDF report within the page limit, and verify Drive access for the instructor. Make the optional video only after required work is complete.
+
+Do not invent output figures or screenshots. Before ETL reload, deployment, or processing, verify the target and avoid overwriting class exercises. Update this handoff with relative paths and reproducible validation evidence as work is completed.

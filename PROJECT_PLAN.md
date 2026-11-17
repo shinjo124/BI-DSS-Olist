@@ -1,6 +1,6 @@
 # Olist BI Project Flow and Assignments
 
-The team has two members: **A is the user/project owner; B is Kiet.** This is the agreed starting split, based on the verified SQL/SSIS setup on A's machine. Rebalance if the actual workload or availability requires it. No deadline has been set, so stages show dependencies rather than dates. Each person prepares evidence and report content for their work; both cross-review.
+The team has two members: **A is Lam; B is Kiet.** This is the agreed starting split, based on the verified SQL/SSIS setup on Lam's machine. Rebalance if the actual workload or availability requires it. No deadline has been set, so stages show dependencies rather than dates. Each person prepares evidence and report content for their work; both cross-review.
 
 ## Project flow
 
@@ -29,7 +29,7 @@ flowchart TD
 
 Mining can run in parallel once the CSV and data rules are available; it does not depend on the cube. Choose MDX and Pivot questions that show different analysis patterns. The target of at least three for each is a team decision, not an explicit assignment count.
 
-## A — Project owner
+## A — Lam
 
 - [x] **Dataset profile:** the snapshot has been checked; results, hashes, and source conditions are in `2_Dataset/DATASET_PROFILE.md`.
 - [x] **Share dataset:** `olist-download.zip` is in `2_Dataset/` on the [team Drive](https://drive.google.com/drive/folders/1hKuZP3kOY0uqP6j4WBQASlRBnHyWJew3?usp=sharing). B should download it and confirm the hash. Keep raw CSVs out of Git.

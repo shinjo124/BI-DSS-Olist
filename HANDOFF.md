@@ -18,7 +18,7 @@ The source repository is [shinjo124/BI-DSS-Olist](https://github.com/shinjo124/B
 - For questions 4 and 10, keep each `payment_type` separate and sum actual `payment_value` rows. An order paid through multiple methods contributes to each method according to its payment rows. Do not select a primary method or collapse methods into an “All” bucket.
 - Use K-Means for customer segmentation and Random Forest to predict low review scores at delivery time. For the Random Forest cohort, retain orders whose selected review has `review_answer_timestamp >= delivered_customer_date` as a proxy that the label was not yet observed. The timestamp is imperfect evidence of when the score became available.
 - Finish required deliverables before deciding whether to make the optional video.
-- The logic and measure contract are documented in [WAREHOUSE_DESIGN.md](WAREHOUSE_DESIGN.md). Keep SSAS many-to-many for Product/Seller filters on order-level measures. Timebox initial implementation and validation to one working day after the cube and test data are ready; this is a decision checkpoint, not a guaranteed estimate. If checks fail, assess the two grouped-fact fallback documented there before changing the design.
+- Keep SSAS many-to-many for Product/Seller filters on order-level measures. Kiet's one working day for initial implementation and validation starts when the base cube processes and independent SQL reference results are ready. At the checkpoint, assess the grouped-fact fallback if checks still fail. The project submission deadline is tracked separately. [Warehouse design](WAREHOUSE_DESIGN.md)
 
 ## Dataset and evidence
 
@@ -35,9 +35,9 @@ Each teammate must check their own SQL Server, SSIS, SSAS Multidimensional, Powe
 ## Remaining work
 
 1. Have Kiet download the Drive archive and verify its hash.
-2. Implement staging, warehouse, and SSIS. Validate row counts, keys, totals, and idempotent reload behavior against the profile.
-3. Build and process the SSAS cube. Test many-to-many against independent SQL at group and grand-total levels, including multi-item orders; apply the one-day checkpoint. Verify Power BI and Excel connections on both machines early. Implement all 10 MDX queries and reconcile results.
-4. In parallel after CSV and data rules are available, train both mining models with leakage-aware features and time-based evaluation. Inspect RFM distributions and cluster meaning; record the baseline, metrics, actual results, and limitations.
+2. Reproduce one analysis on both machines from the same representative CSV subset through SSIS, the warehouse, and SSAS. Run the MDX query and check Power BI and Excel connectivity before scaling to the full dataset.
+3. Validate the full load and reload against the dataset profile. Test many-to-many at group and grand-total levels. Start the shared reconciliation checklist with Q4, Q6, and Q8, then reconcile all 10 SSAS, Power BI, and MDX results and the selected Pivot analyses. Save queries, filters, and results as work progresses. [Project plan](PROJECT_PLAN.md)
+4. Start mining in parallel once the CSV and data rules are ready. Inspect RFM distributions and cluster meaning. For Random Forest, split by delivery time, restrict training to reviews available by the cutoff, and report exclusions, baseline, metrics, and limitations.
 5. Cross-check results, collect real evidence, produce the DOCX/PDF report within the page limit, and verify Drive access for the instructor. Make the optional video only after required work is complete.
 
 Do not invent output figures or screenshots. Before ETL reload, deployment, or processing, verify the target and avoid overwriting class exercises. Update this handoff with relative paths and reproducible validation evidence as work is completed.

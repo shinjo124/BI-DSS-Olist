@@ -7,7 +7,8 @@ The team has two members: **A is Lam; B is Kiet.** This is the agreed starting s
 ```mermaid
 flowchart TD
     D["A: obtain and profile Olist snapshot"] --> S["A + B: agree on 10 questions, grain, schema, and measures"]
-    S --> E["A: SQL warehouse + SSIS, reload validation"]
+    S --> T["A + B: reproduce one analysis end to end on both machines"]
+    T --> E["A: full warehouse load and reload validation"]
     S --> P["B: cube and report design"]
     E --> C["B: build and process SSAS cube"]
     P --> C
@@ -27,7 +28,13 @@ flowchart TD
     N --> Z["B: verify Drive and permissions; optional video"]
 ```
 
-Mining can run in parallel once the CSV and data rules are available; it does not depend on the cube. The team targets all 10 MDX queries and at least three Pivot analyses. These are team decisions, not explicit assignment counts for those sections. Start with three representative MDX queries to expose cube issues, then complete the remaining seven and reconcile all results.
+Mining can run in parallel once the CSV and data rules are available. The team targets all 10 MDX queries and at least three Pivot analyses. These are team decisions, not explicit assignment counts for those sections.
+
+## First integration milestone
+
+- [ ] Lam loads a representative subset of the shared snapshot through SSIS into the warehouse while Kiet builds the first cube measures. Include a multi-method payment, repeated items within a category or seller, an order spanning groups, and an order without a review.
+- [ ] Kiet processes the base cube. Both teammates reproduce one analysis from the same subset. Run its MDX query and open its Power BI report and Excel PivotTable from the other machine. Record matching results, connection settings, and any setup issues before scaling to the full dataset.
+- [ ] Maintain one shared checklist for all 10 questions with the measure, filters, sort order, expected SQL result, and evidence links for SSAS, Power BI, and MDX. Keep the subset and full-snapshot results distinct. Start with Q4 (payment share), Q6 (category reviews), and Q8 (seller order counts and reviews), then complete and reconcile the other seven. Save each query, its filter settings, and its actual result as work is completed.
 
 ## A — Lam
 
@@ -43,8 +50,8 @@ Mining can run in parallel once the CSV and data rules are available; it does no
 ## B — Kiet
 
 - [ ] **Analysis specification:** map the 10 outline questions to measures, dimensions, filters, and expected outputs. Agree on schema, grain, and calculations with A; hand the specification to A for warehouse work.
-- [ ] **SSAS and Power BI:** design the cube in parallel with ETL. After A's handoff, build and process it; keep many-to-many and timebox its initial implementation and SQL validation to one working day once prerequisites are ready. Check per-group and overall totals with multi-category/seller orders; document failures and assess the fallback if the checkpoint fails. Verify Power BI and Excel connectivity on both machines early. Complete the 10 manual SSAS analyses and Power BI report; hand A the project, PBIX, connection instructions, results, and evidence.
-- [ ] **Random Forest:** define the low-score label and features available at delivery time but before the review. Handle missing data, split before fitting preprocessing, establish a baseline, and evaluate appropriately. Hand A code, environment, run steps, actual results, and limitations. Check that features were available at prediction time and do not use review text to predict its own score.
+- [ ] **SSAS and Power BI:** design the cube in parallel with ETL. Keep many-to-many and give initial implementation and SQL validation one working day starting when the base cube processes and SQL reference results are ready. Use the group and grand-total checks in [the warehouse design](WAREHOUSE_DESIGN.md). Document failures and assess the fallback at the checkpoint. Complete the 10 manual SSAS analyses and Power BI report and hand A the project, PBIX, connection instructions, results, and evidence.
+- [ ] **Random Forest:** split by delivery time and train only on orders whose selected review answer is available by the training cutoff. Record exclusions, fit preprocessing on training data, and compare with a baseline under the same split. Hand A the code, environment, run steps, actual results, and timestamp limitations. Use only features available at delivery.
 - [ ] **MDX:** write and run questions 6–10 using actual cube metadata; reconcile each with SQL or SSAS Browser and Power BI under identical filters, and review A's results. Save queries and evidence.
 - [ ] **Submission package:** review the report and A's deliverables; prepare the Drive folder structure and verify required files, links, and permission for `phungntk@uit.edu.vn`. Do not assume access has been granted until checked.
 

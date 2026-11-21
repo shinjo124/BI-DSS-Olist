@@ -26,7 +26,9 @@ The Olist archive was downloaded from [Kaggle](https://www.kaggle.com/datasets/o
 
 The profile found 112,650 order-item rows, including 9,803 multi-item orders; 547 orders have multiple review rows; and 2,961 orders have multiple payment rows. Directly joining these tables can multiply measures, which is why the design separates grains. Only 2,887 of 94,983 customers in scope made repeat purchases (3.04%). The proposed Random Forest cohort contains 91,170 delivered orders with a selected review after the delivery timestamp proxy; 8,629 (9.46%) have a score of 1 or 2.
 
-The snapshot figures are input-validation targets, not warehouse or cube results. No SSIS, SSAS, Power BI, Excel Pivot, or mining implementation has been verified yet.
+The SQL load has been run twice against the checked full snapshot in an isolated test database and matched these totals. Sales, payment and order rows also reconciled against staging. A configured temporary SSIS package completed the four-order subset and the full snapshot in Visual Studio; totals and reconciliation checks passed afterward. The second-machine run remains open. An exploratory K-Means run has been tested locally; no SSAS, Power BI, Excel Pivot, or MDX results have been verified. See [SSIS work status](3_SSIS/README.md) and [K-Means results](5_DataMining/README.md).
+
+For the first cube check, the [four-order subset](2_Dataset/INTEGRATION_SUBSET.md) now includes payment, category, and seller reference results. Full-snapshot SQL references for all ten questions, and category/seller checks against staging, are linked from the SSIS README. A [draft of Lam's report sections](1_Report/DRAFT_LAM_SECTIONS.md) contains the verified work and identifies the missing team results; it is not the final submission.
 
 ## Environment and access
 
@@ -34,7 +36,7 @@ Each teammate must check their own SQL Server, SSIS, SSAS Multidimensional, Powe
 
 ## Remaining work
 
-1. Have Kiet download the Drive archive and verify its hash.
+1. The user confirmed that the shared-dataset step is complete. The two-machine SSIS-to-cube check remains open.
 2. Reproduce one analysis on both machines from the same representative CSV subset through SSIS, the warehouse, and SSAS. Run the MDX query and check Power BI and Excel connectivity before scaling to the full dataset.
 3. Validate the full load and reload against the dataset profile. Test many-to-many at group and grand-total levels. Start the shared reconciliation checklist with Q4, Q6, and Q8, then reconcile all 10 SSAS, Power BI, and MDX results and the selected Pivot analyses. Save queries, filters, and results as work progresses. [Project plan](PROJECT_PLAN.md)
 4. Start mining in parallel once the CSV and data rules are ready. Inspect RFM distributions and cluster meaning. For Random Forest, split by delivery time, restrict training to reviews available by the cutoff, and report exclusions, baseline, metrics, and limitations.

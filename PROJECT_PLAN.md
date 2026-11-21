@@ -39,10 +39,12 @@ Mining can run in parallel once the CSV and data rules are available. The team t
 ## A — Lam
 
 - [x] **Dataset profile:** the snapshot has been checked; results, hashes, and source conditions are in `2_Dataset/DATASET_PROFILE.md`.
-- [x] **Share dataset:** `olist-download.zip` is in `2_Dataset/` on the [team Drive](https://drive.google.com/drive/folders/1hKuZP3kOY0uqP6j4WBQASlRBnHyWJew3?usp=sharing). B should download it and confirm the hash. Keep raw CSVs out of Git.
+- [x] **Share dataset:** `olist-download.zip` is in `2_Dataset/` on the [team Drive](https://drive.google.com/drive/folders/1hKuZP3kOY0uqP6j4WBQASlRBnHyWJew3?usp=sharing). The user confirmed the shared-dataset step complete. Keep raw CSVs out of Git.
 - [ ] **Shared design:** agree with B on the 10 question definitions, grain, keys, filters, missing-data rules, and measure calculations before implementing separate components. Record changes from the outline and why.
 - [ ] **SQL and SSIS:** create staging, warehouse, and Olist ETL project; document portable setup and run steps. Reconcile rows, keys, revenue, freight, payment totals, and rejected rows against the source; run the load twice and verify identical totals and no duplicates or data loss. Hand B the schema, validated data, SQL checks, and evidence.
+- SQL schema, staging importer and warehouse transformation have passed local full-snapshot totals and row reconciliation. A configured SSIS package copy ran successfully on both the subset and full snapshot in Visual Studio. A reproducible two-machine handoff remains open. [SSIS status](3_SSIS/README.md)
 - [ ] **K-Means:** build customer-level data, inspect RFM distributions and limited repeat-purchase frequency, compare candidate values of k, evaluate and interpret cluster profiles. Hand off code, environment, run steps, actual results, and limitations. Do not label customers loyal without evidence.
+- An exploratory K-Means run and initialization stability check have been completed locally; review the profiles and limitations before using them in the report. [K-Means results](5_DataMining/README.md)
 - [ ] **Excel Pivot:** after the cube is ready, create at least three useful analyses; save the workbook and evidence, document the source/connection, and reconcile measures with SQL or the cube.
 - [ ] **MDX:** write and run questions 1–5 using actual cube metadata; reconcile each with SQL or SSAS Browser and Power BI under identical filters, and review B's results.
 - [ ] **Report:** assemble the DOCX from both members' explanations, figures, run steps, and actual results; export PDF, stay within 100 pages, and send it to B for final review.
@@ -56,6 +58,23 @@ Mining can run in parallel once the CSV and data rules are available. The team t
 - [ ] **Submission package:** review the report and A's deliverables; prepare the Drive folder structure and verify required files, links, and permission for `phungntk@uit.edu.vn`. Do not assume access has been granted until checked.
 
 ## Handoffs and joint checks
+
+The table tracks the **full snapshot**. SQL references are saved locally; the other columns remain open until actual results and evidence are added. Apply the same filters and rounding in every tool. For the four-order test, use the separate [subset references](2_Dataset/INTEGRATION_SUBSET.md).
+
+| Question and comparison | SQL reference | SSAS manual | Power BI | MDX |
+| --- | --- | --- | --- | --- |
+| Q1 Revenue and orders by year/quarter | [Q1–Q5](3_SSIS/sql/reference_questions_01_05_results.txt) | Pending | Pending | Pending |
+| Q2 Top 10 categories by revenue | [Q1–Q5](3_SSIS/sql/reference_questions_01_05_results.txt) | Pending | Pending | Pending |
+| Q3 Top 5 customer states | [Q1–Q5](3_SSIS/sql/reference_questions_01_05_results.txt) | Pending | Pending | Pending |
+| Q4 Payment amount and share | [Q1–Q5](3_SSIS/sql/reference_questions_01_05_results.txt) | Pending | Pending | Pending |
+| Q5 Monthly revenue and growth in 2017 | [Q1–Q5](3_SSIS/sql/reference_questions_01_05_results.txt) | Pending | Pending | Pending |
+| Q6 Category review averages, minimum 100 reviews | [Q6 and Q8](3_SSIS/sql/reference_questions_06_08_results.txt) | Pending | Pending | Pending |
+| Q7 Delivery and late rates by state | [Q7, Q9, Q10](3_SSIS/sql/reference_questions_07_09_10_results.txt) | Pending | Pending | Pending |
+| Q8 Top 10 sellers and order reviews | [Q6 and Q8](3_SSIS/sql/reference_questions_06_08_results.txt) | Pending | Pending | Pending |
+| Q9 Freight ratio by region, January–August | [Q7, Q9, Q10](3_SSIS/sql/reference_questions_07_09_10_results.txt) | Pending | Pending | Pending |
+| Q10 Payment by weekday and method | [Q7, Q9, Q10](3_SSIS/sql/reference_questions_07_09_10_results.txt) | Pending | Pending | Pending |
+
+For each completed cell, replace `Pending` with an evidence link and record any additional filters, sort order, and discrepancies. The SQL files contain the exact definitions and ordering. Reconcile at least three selected Excel Pivot analyses separately and link the workbook and results here when available.
 
 1. **A → B:** A provides the same CSV snapshot, source, and retrieval instructions; Kiet confirms access.
 2. **A + B:** record the 10-question specification, schema, and measure definitions before ETL and cube work split. Resolve order/item counting, reviews and delivery metrics, multi-seller orders, and multiple payment methods.

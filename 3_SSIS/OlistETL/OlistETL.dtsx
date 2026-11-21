@@ -30,7 +30,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\ADMIN\AppData\Local\Temp\olist_subset_check_20261121\olist_orders_dataset.csv">
+          DTS:ConnectionString="C:\Users\ADMIN\Documents\ChatGPT\DSS-BI\2_Dataset\raw\olist_orders_dataset.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -109,15 +109,15 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[localhost.OlistDW_Subset_Test]"
+      DTS:refId="Package.ConnectionManagers[localhost.OlistDW_Test]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{A2E9E71F-DB38-4739-8698-3872B879C267}"
-      DTS:ObjectName="localhost.OlistDW_Subset_Test">
+      DTS:ObjectName="localhost.OlistDW_Test">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=OlistDW_Subset_Test;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-OlistETL-{A2E9E71F-DB38-4739-8698-3872B879C267}localhost.OlistDW_Subset_Test;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=OlistDW_Test;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-OlistETL-{A2E9E71F-DB38-4739-8698-3872B879C267}localhost.OlistDW_Test;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -129,7 +129,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="ImportArguments">
       <DTS:VariableValue
-        DTS:DataType="8">"C:\Users\ADMIN\Documents\ChatGPT\DSS-BI\3_SSIS\import_staging.py" --data "C:\Users\ADMIN\AppData\Local\Temp\olist_subset_check_20261121" --server localhost --database OlistDW_Subset_Test</DTS:VariableValue>
+        DTS:DataType="8">"C:\Users\ADMIN\Documents\ChatGPT\DSS-BI\3_SSIS\import_staging.py" --data "C:\Users\ADMIN\Documents\ChatGPT\DSS-BI\2_Dataset\raw" --server localhost --database OlistDW_Test</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -147,7 +147,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="SqlcmdArguments">
       <DTS:VariableValue
-        DTS:DataType="8">-S localhost -E -C -b -d OlistDW_Subset_Test -Q "EXEC dbo.LoadOlistWarehouse"</DTS:VariableValue>
+        DTS:DataType="8">-S localhost -E -C -b -d OlistDW_Test -Q "EXEC dbo.LoadOlistWarehouse"</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -197,7 +197,7 @@
       <DTS:ObjectData>
         <ExecuteProcessData
           Executable="C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\SQLCMD.EXE"
-          Arguments="-S localhost -E -C -b -d OlistDW_Subset_Test -Q &quot;EXEC dbo.LoadOlistWarehouse&quot;" />
+          Arguments="-S localhost -E -C -b -d OlistDW_Test -Q &quot;EXEC dbo.LoadOlistWarehouse&quot;" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>

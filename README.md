@@ -1,6 +1,6 @@
 # Olist BI Project
 
-This repository contains the project handoff, dataset profile, warehouse and measure specification, and team plan for a two-person BI final project. The Olist dataset has been profiled. A SQL warehouse load and exploratory K-Means run have been tested locally; the SSIS package, SSAS cube, reports, and cross-machine integration remain incomplete. No deadline has been set.
+This repository contains the project handoff, dataset profile, warehouse and measure specification, and team plan for a two-person BI final project. The Olist dataset has been profiled. A native SSIS pipeline, SQL warehouse load, and exploratory K-Means run have been tested locally; the SSAS cube, reports, and cross-machine integration remain open. No deadline has been set.
 
 ## Start here
 
@@ -19,6 +19,6 @@ The checked `olist-download.zip` snapshot is in the [team Drive](https://drive.g
 
 The Drive has the submission folders `1_Report/`, `2_Dataset/`, `3_SSIS/`, `4_SSAS/`, `5_DataMining/`, and `6_Videos/`. GitHub stores source and project documentation; Drive stores the dataset, videos, and submission files. Drive access for every team member and the instructor still needs verification.
 
-Setup and test instructions for the SQL load and staging importer are in [3_SSIS/README.md](3_SSIS/README.md). The [K-Means README](5_DataMining/README.md) documents its environment, run commands, and findings. A temporary configured SSIS package copy ran the subset and full snapshot successfully; the second-machine run remains open.
+Setup and test instructions for both SSIS packages are in [3_SSIS/README.md](3_SSIS/README.md). The [K-Means README](5_DataMining/README.md) documents its environment, run commands, and findings. The saved native package loaded the full snapshot successfully in the local Visual Studio debugger; second-machine verification remains open.
 
 The [integration subset](2_Dataset/INTEGRATION_SUBSET.md) contains the first cube-check references. [Lam's report draft](1_Report/DRAFT_LAM_SECTIONS.md) is working material and still needs the remaining team results and final review.

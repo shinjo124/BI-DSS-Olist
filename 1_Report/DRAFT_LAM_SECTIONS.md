@@ -1,6 +1,6 @@
 # Olist Business Intelligence Final Project
 
-Working draft of Lam's sections. A configured SSIS package copy has run on the four-order subset and full snapshot in a local Visual Studio session. Cube, Power BI, MDX, and Excel results are not yet available for reconciliation. Replace this notice only after the team verifies those deliverables. All values below describe the checked Olist snapshot and the stated filters.
+Working draft of Lam's sections. The native SSIS package has run on the full snapshot in the local Visual Studio debugger; the earlier package was tested on the four-order subset and full snapshot. Cube, Power BI, MDX, and Excel results are not yet available for reconciliation. Replace this notice only after the team verifies those deliverables. All values below describe the checked Olist snapshot and the stated filters.
 
 ## Data selection and warehouse loading
 
@@ -8,11 +8,11 @@ The project uses the Brazilian e-commerce public dataset provided by Olist. Eigh
 
 The warehouse includes orders with at least one item whose status is neither canceled nor unavailable. Other statuses remain in scope. The purchase calendar date is the common analysis date. The resulting warehouse contains 98,199 orders and 112,101 item rows. Item revenue is BRL 13,494,400.74 and freight is BRL 2,241,126.29. Revenue is the sum of item prices excluding freight; it is not settled accounting revenue.
 
-CSV fields needed for the analysis are imported into typed staging tables. The staging import replaces the tables in a transaction and rolls back on errors. The warehouse procedure validates required lookups and orphan records before replacing warehouse data in a separate transaction. This separation means a failed warehouse load can leave new staging data beside the previous warehouse. Malformed source rows stop the import; a separate rejected-row file is not yet implemented. The SSIS project orchestrates the importer and warehouse procedure; a configured temporary copy completed the four-order subset locally.
+The native SSIS package imports the required CSV fields into typed staging tables using Data Flows. It validates required lookups and orphan records, then loads dimensions and facts through separate Data Flows. A package transaction covers the staging and warehouse reload; an invalid-payment test rolled back the previous warehouse state. Malformed source rows stop the import; a separate rejected-row file is not yet implemented. The earlier package instead orchestrates the Python importer and SQL procedure in separate transactions.
 
 The model keeps sales at item grain, payments at payment-row grain, and delivery and reviews at order grain. This avoids multiplying sales when an order has several payments or reviews. The selected review is the latest according to creation time, answer time, review ID, and score as descending tie-breakers. Missing reviews remain missing rather than being treated as zero. Payment analysis uses actual payment rows, so an order using multiple methods contributes to each applicable method.
 
-The full warehouse was loaded twice in an isolated local test database using the importer and SQL procedure, and a configured SSIS package copy later ran the full snapshot successfully. Eligible staging rows reconciled with warehouse sales, payments, and orders; category and seller aggregates also matched independently aggregated staging data. Source CSV counts and total price, freight, and payment values matched staging. Counts and totals do not prove every source field was imported correctly. A reproducible run on the second machine remains open.
+The full warehouse was loaded twice in an isolated local test database using the importer and SQL procedure. The native SSIS package also loaded the full snapshot successfully in the local Visual Studio debugger. Eligible staging rows reconciled with warehouse sales, payments, and orders; category and seller aggregates also matched independently aggregated staging data. The native staging tables matched the earlier full-data staging tables in both directions and by row count. A reproducible run on the second machine remains open.
 
 ## Customer segmentation using K Means
 

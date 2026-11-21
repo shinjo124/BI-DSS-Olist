@@ -1,39 +1,260 @@
-<?xml version='1.0' encoding='utf-8'?>
-<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:refId="Package" DTS:CreationName="Microsoft.Package" DTS:DTSID="{6088A26B-C7C1-4CE4-B5AA-CFCC47B8171A}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="13.0.6300.2" DTS:LocaleID="1033" DTS:ObjectName="OlistETL" DTS:ProtectionLevel="0" DTS:VersionGUID="{435CCC3B-9D29-4CFA-9D9E-EA4D84A274BC}">
-  <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/21/2026 1:42:08 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ADMIN"
+  DTS:CreatorName="ADMIN\ADMIN"
+  DTS:DTSID="{6088A26B-C7C1-4CE4-B5AA-CFCC47B8171A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="OlistETL"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{0933BE87-5913-4915-8328-FB7E40B7681A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9F48D206-B663-4F8D-8AB3-E19A0DB072A5}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\ADMIN\AppData\Local\Temp\olist_subset_check_20261121\olist_orders_dataset.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="32"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;order_id&quot;"
+              DTS:DTSID="{2E7F1544-23FD-4E4C-9C4D-733FAB19BBF1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="32"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;customer_id&quot;"
+              DTS:DTSID="{8923DA60-59F0-4E4B-8F5D-213BDAEFF568}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;order_status&quot;"
+              DTS:DTSID="{DA76CF7C-662D-464F-BF4D-7EDD8E902C2B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;order_purchase_timestamp&quot;"
+              DTS:DTSID="{8B710A3B-B246-42EF-8812-9D6AD8A02AD5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;order_approved_at&quot;"
+              DTS:DTSID="{ED8654EC-B393-48AF-9ABD-A85F31EF1440}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;order_delivered_carrier_date&quot;"
+              DTS:DTSID="{9BD42149-E08A-410A-AB47-C05E4A49F072}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;order_delivered_customer_date&quot;"
+              DTS:DTSID="{2F150BA1-A58E-4EA8-8B00-8ADE4B19D61E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;order_estimated_delivery_date&quot;"
+              DTS:DTSID="{9DCFB828-CE20-4274-B17B-D984B5DCA21D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.OlistDW_Subset_Test]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A2E9E71F-DB38-4739-8698-3872B879C267}"
+      DTS:ObjectName="localhost.OlistDW_Subset_Test">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=OlistDW_Subset_Test;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-OlistETL-{A2E9E71F-DB38-4739-8698-3872B879C267}localhost.OlistDW_Subset_Test;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables>
-    <DTS:Variable DTS:CreationName="" DTS:DTSID="{51B322D0-8163-457C-8774-1C50136DDE94}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="ImportArguments">
-      <DTS:VariableValue DTS:DataType="8">__CONFIGURE_IMPORTER__</DTS:VariableValue>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{51B322D0-8163-457C-8774-1C50136DDE94}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ImportArguments">
+      <DTS:VariableValue
+        DTS:DataType="8">"C:\Users\ADMIN\Documents\ChatGPT\DSS-BI\3_SSIS\import_staging.py" --data "C:\Users\ADMIN\AppData\Local\Temp\olist_subset_check_20261121" --server localhost --database OlistDW_Subset_Test</DTS:VariableValue>
     </DTS:Variable>
-    <DTS:Variable DTS:CreationName="" DTS:DTSID="{C1379A6B-9DF4-4FCC-8FF6-5CA31525D0C0}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="PythonExecutable">
-      <DTS:VariableValue DTS:DataType="8">python.exe</DTS:VariableValue>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C1379A6B-9DF4-4FCC-8FF6-5CA31525D0C0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PythonExecutable">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\ADMIN\Documents\ChatGPT\DSS-BI\.venv\Scripts\python.exe</DTS:VariableValue>
     </DTS:Variable>
-    <DTS:Variable DTS:CreationName="" DTS:DTSID="{3F811912-EB46-41EC-8FE2-81B701F6C463}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="SqlcmdArguments">
-      <DTS:VariableValue DTS:DataType="8">-b -Q "THROW 50000, 'Configure SqlcmdArguments', 1;"</DTS:VariableValue>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3F811912-EB46-41EC-8FE2-81B701F6C463}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SqlcmdArguments">
+      <DTS:VariableValue
+        DTS:DataType="8">-S localhost -E -C -b -d OlistDW_Subset_Test -Q "EXEC dbo.LoadOlistWarehouse"</DTS:VariableValue>
     </DTS:Variable>
-    <DTS:Variable DTS:CreationName="" DTS:DTSID="{EE6E0D53-711A-4260-A8E9-25F634049637}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="SqlcmdExecutable">
-      <DTS:VariableValue DTS:DataType="8">__CONFIGURE_SQLCMD__</DTS:VariableValue>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EE6E0D53-711A-4260-A8E9-25F634049637}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SqlcmdExecutable">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\SQLCMD.EXE</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
-    <DTS:Executable DTS:refId="Package\Import CSV to staging" DTS:CreationName="Microsoft.ExecuteProcess" DTS:DTSID="{7798B201-CDD3-4D3C-BE70-29E9EE5BF691}" DTS:ExecutableType="Microsoft.ExecuteProcess" DTS:LocaleID="-1" DTS:ObjectName="Import CSV to staging" DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1" DTS:ThreadHint="0">
+    <DTS:Executable
+      DTS:refId="Package\Import CSV to staging"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:DTSID="{7798B201-CDD3-4D3C-BE70-29E9EE5BF691}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import CSV to staging"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
       <DTS:Variables />
-      <DTS:PropertyExpression DTS:Name="Arguments">@[User::ImportArguments]</DTS:PropertyExpression>
-      <DTS:PropertyExpression DTS:Name="Executable">@[User::PythonExecutable]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Arguments">@[User::ImportArguments]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Executable">@[User::PythonExecutable]</DTS:PropertyExpression>
       <DTS:ObjectData>
-        <ExecuteProcessData Executable="python.exe" Arguments="--help" />
+        <ExecuteProcessData
+          Executable="python.exe"
+          Arguments="__CONFIGURE_IMPORTER__" />
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable DTS:refId="Package\Load warehouse" DTS:CreationName="Microsoft.ExecuteProcess" DTS:DTSID="{9B4800C0-9D37-4B2B-990A-9BEB3EB8114F}" DTS:ExecutableType="Microsoft.ExecuteProcess" DTS:LocaleID="-1" DTS:ObjectName="Load warehouse" DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1" DTS:ThreadHint="0">
+    <DTS:Executable
+      DTS:refId="Package\Load warehouse"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:DTSID="{9B4800C0-9D37-4B2B-990A-9BEB3EB8114F}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load warehouse"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
       <DTS:Variables />
-      <DTS:PropertyExpression DTS:Name="Arguments">@[User::SqlcmdArguments]</DTS:PropertyExpression>
-      <DTS:PropertyExpression DTS:Name="Executable">@[User::SqlcmdExecutable]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Arguments">@[User::SqlcmdArguments]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Executable">@[User::SqlcmdExecutable]</DTS:PropertyExpression>
       <DTS:ObjectData>
-        <ExecuteProcessData Executable="sqlcmd.exe" Arguments="-?" />
+        <ExecuteProcessData
+          Executable="C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\SQLCMD.EXE"
+          Arguments="-S localhost -E -C -b -d OlistDW_Subset_Test -Q &quot;EXEC dbo.LoadOlistWarehouse&quot;" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint DTS:refId="Package.PrecedenceConstraints[{AD7D2E5D-DF04-438E-A31A-333F9B2EAC06\}]" DTS:CreationName="" DTS:DTSID="{AD7D2E5D-DF04-438E-A31A-333F9B2EAC06}" DTS:From="Package\Import CSV to staging" DTS:LogicalAnd="True" DTS:ObjectName="{AD7D2E5D-DF04-438E-A31A-333F9B2EAC06}" DTS:To="Package\Load warehouse" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{AD7D2E5D-DF04-438E-A31A-333F9B2EAC06\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{AD7D2E5D-DF04-438E-A31A-333F9B2EAC06}"
+      DTS:From="Package\Import CSV to staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{AD7D2E5D-DF04-438E-A31A-333F9B2EAC06}"
+      DTS:To="Package\Load warehouse" />
   </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Import CSV to staging"
+          TopLeft="254.071429100572,104.911764618744" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Load warehouse"
+          TopLeft="268.385714816378,208.041176382109" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{AD7D2E5D-DF04-438E-A31A-333F9B2EAC06\}]"
+          TopLeft="345.628571958475,146.511764618744">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.5294117633653"
+              Start="0,0"
+              End="0,54.0294117633653">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.0294117633653" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

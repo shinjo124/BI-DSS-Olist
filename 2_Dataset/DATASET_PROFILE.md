@@ -35,4 +35,4 @@ The CSVs were read with pandas 3.0.6. Checks covered row counts, nulls, duplicat
 
 ## Limits
 
-2018 is incomplete; compare equal periods or state the period explicitly. This is historical data and should not be used to claim current business conditions. Since this profile, an exploratory K-Means model and the SQL warehouse load have run on the snapshot. SSIS execution and the SSAS cube remain unverified. Not every possible data-quality rule or Drive permission has been checked.
+2018 is incomplete; compare equal periods or state the period explicitly. This is historical data and should not be used to claim current business conditions. Since this profile, an exploratory K-Means model, the SQL warehouse load, and the native SSIS package have run locally on the snapshot. The SSAS cube and a second-machine SSIS run remain unverified. Not every possible data-quality rule or Drive permission has been checked.

@@ -1,8 +1,23 @@
 # Olist warehouse and ETL
 
-The SQL scripts create the warehouse, eight typed staging tables, and a transactional staging-to-warehouse load procedure. `OlistETL.slnx` contains a SQL Server 2016-targeted Integration Services project with two sequential Execute Process tasks for the Python importer and sqlcmd warehouse load. A temporary configured copy completed the four-order subset and two consecutive full-snapshot runs in Visual Studio 18.11.2. Both tasks reported success in each full run; full-snapshot totals, staging reconciliation, and category/seller checks passed after each run in an isolated test database. Execution on another machine remains unverified. Standalone SSIS 13 DTExec reported that Standard Edition or higher is required outside SQL Server Data Tools; SSIS 17 DTExec could not load the Execute Process Task.
+The SQL scripts create the warehouse, eight typed staging tables, and a transactional staging-to-warehouse load procedure. `OlistETL.slnx` targets SQL Server 2025 and contains two packages. `OlistNativeETL.dtsx` loads the eight CSVs with SSIS Data Flows, then loads the dimensions and facts with separate Data Flows. `OlistETL.dtsx` is the earlier Python and sqlcmd implementation described below.
 
-Before running the package, configure the `User::PythonExecutable`, `User::ImportArguments`, `User::SqlcmdExecutable`, and `User::SqlcmdArguments` variables in the SSIS designer. Use an absolute Python executable path and an import argument string containing the absolute `import_staging.py` and data-directory paths plus explicit `--server` and `--database` values. Set `SqlcmdExecutable` to the installed sqlcmd path and use sqlcmd arguments with `-b` and `-Q "EXEC dbo.LoadOlistWarehouse"` for the same target database. The default import arguments, SQL executable, and SQL arguments intentionally fail until configured. First validate against an isolated test database; runtime and edition compatibility must be verified on the executing machine.
+The native package built and ran successfully in the Visual Studio 18.11.2 debugger against the local full-data database, `OlistDW_Test`. The full-snapshot, source-reconciliation, and category/seller checks passed afterward. A temporary runtime copy also loaded an isolated database; all eight staging tables matched the earlier full-data staging tables in both directions and by row count. A second isolated run succeeded; an invalid payment row failed and rolled back, preserving the previous warehouse totals. Execution on another machine remains unverified. Visual Studio crashed after the successful run when opening the Data Flow selector; the control flow and Orders Data Flow rendered before the crash.
+
+## Native package setup
+
+1. Create an empty target database and run `sql/01_warehouse.sql` and `sql/02_staging.sql` against it. The native package uses the tables from those scripts; it does not call the procedure in `sql/03_load_warehouse.sql`.
+2. Open `OlistETL.slnx` with the SSIS extension. In `OlistNativeETL.dtsx`, configure the `Olist Warehouse` OLE DB connection for the target database and the eight named CSV connection managers for the local `2_Dataset/raw` folder. The saved values currently point to this machine and the full-data database `OlistDW_Test`; update them before running elsewhere.
+3. Ensure Microsoft Distributed Transaction Coordinator (MSDTC) is running. The package requires a transaction so a failure rolls back staging and warehouse changes. A successful run replaces both staging and warehouse data; use a database intended for this project and retain a backup.
+4. Execute the native package and run `sql/test_full_snapshot.sql`, `sql/test_source_reconciliation.sql`, and `sql/test_group_reconciliation.sql` against the target. Reprocess dependent SSAS objects after a successful reload because surrogate keys can change.
+
+The control flow prepares staging, loads Orders, Customers, Products, Category Translation, Sellers, Order Items, Payments, and Reviews, validates the staged relationships, prepares the warehouse, then loads six dimensions and three facts. Each CSV has a Flat File Source, conversion steps, and an OLE DB Destination. Warehouse Data Flows use OLE DB source queries to apply the existing business rules and OLE DB destinations to populate their tables. Errors stop the run; a separate rejected-row file is not produced.
+
+## Earlier Python and sqlcmd package
+
+A temporary configured copy of `OlistETL.dtsx` completed the four-order subset and two consecutive full-snapshot runs in Visual Studio. Both tasks reported success in each full run; full-snapshot totals, staging reconciliation, and category/seller checks passed in an isolated database. Execution on another machine remains unverified. Standalone SSIS 13 DTExec reported that Standard Edition or higher is required outside SQL Server Data Tools; SSIS 17 DTExec could not load the Execute Process Task.
+
+Before running the package, configure the `User::PythonExecutable`, `User::ImportArguments`, `User::SqlcmdExecutable`, and `User::SqlcmdArguments` variables in the SSIS designer. Use an absolute Python executable path and an import argument string containing the absolute `import_staging.py` and data-directory paths plus explicit `--server` and `--database` values. Set `SqlcmdExecutable` to the installed sqlcmd path and use sqlcmd arguments with `-b` and `-Q "EXEC dbo.LoadOlistWarehouse"` for the same target database. The saved variables currently contain local paths and point to `OlistDW_Subset_Test`; check and update them for the intended machine and database before running. First validate against an isolated test database; runtime and edition compatibility must be verified on the executing machine.
 
 Run the scripts against a new empty SQL Server database. They create objects in that database and intentionally fail on a second schema installation rather than deleting existing data.
 
@@ -23,15 +38,15 @@ sqlcmd -S <server> -E -C -b -d <new-empty-database> -i 3_SSIS/sql/test_staging.s
 | Variable | Example value |
 | --- | --- |
 | `PythonExecutable` | `C:\path\to\python.exe` |
-| `ImportArguments` | `"C:\path\to\repo\3_SSIS\import_staging.py" --data "C:\path\to\subset" --server "localhost" --database "OlistDW_Test"` |
+| `ImportArguments` | `"C:\path\to\repo\3_SSIS\import_staging.py" --data "C:\path\to\subset" --server "localhost" --database "OlistDW_Subset_Test"` |
 | `SqlcmdExecutable` | `C:\path\to\sqlcmd.exe` |
-| `SqlcmdArguments` | `-S "localhost" -E -C -b -d "OlistDW_Test" -Q "EXEC dbo.LoadOlistWarehouse"` |
+| `SqlcmdArguments` | `-S "localhost" -E -C -b -d "OlistDW_Subset_Test" -Q "EXEC dbo.LoadOlistWarehouse"` |
 
 4. Check that both argument strings name the same server and database, then right-click the package under SSIS Packages and select Execute Package. After it succeeds, run `sqlcmd -S <server> -E -C -b -d <test-database> -i 3_SSIS/sql/test_subset.sql` from the repository root and compare Q4, category, and seller results with the subset handoff. Repeat on the other machine and record the actual outcomes. Do not commit the local variable values.
 
 The subset run succeeded in the local designer using a temporary copy; the portable setup and execution still need verification on the other machine.
 
-The tested temporary package and repository package were compared as XML after excluding package-variable values and creator/date metadata; their remaining structure matched. The repository package retains placeholder configuration, so each teammate must set their own paths and target database before running it.
+The repository package currently retains machine-specific configuration, so each teammate must set their own paths and target database before running it.
 
 A separate local failure-path check used a nonexistent input directory against the isolated subset database. The import task and package reported failure, while the warehouse task did not execute. Existing order keys and subset totals remained unchanged. This checks the missing-directory case; other failure modes still need their own evidence.
 

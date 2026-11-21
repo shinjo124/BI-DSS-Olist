@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts" DTS:refId="Package" DTS:CreationName="Microsoft.Package" DTS:DTSID="{6088A26B-C7C1-4CE4-B5AA-CFCC47B8171A}" DTS:ExecutableType="Microsoft.Package" DTS:LastModifiedProductVersion="13.0.6300.2" DTS:LocaleID="1033" DTS:ObjectName="OlistETL" DTS:ProtectionLevel="0" DTS:VersionGUID="{435CCC3B-9D29-4CFA-9D9E-EA4D84A274BC}">
+  <DTS:Property DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{51B322D0-8163-457C-8774-1C50136DDE94}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="ImportArguments">
+      <DTS:VariableValue DTS:DataType="8">__CONFIGURE_IMPORTER__</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{C1379A6B-9DF4-4FCC-8FF6-5CA31525D0C0}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="PythonExecutable">
+      <DTS:VariableValue DTS:DataType="8">python.exe</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{3F811912-EB46-41EC-8FE2-81B701F6C463}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="SqlcmdArguments">
+      <DTS:VariableValue DTS:DataType="8">-b -Q "THROW 50000, 'Configure SqlcmdArguments', 1;"</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable DTS:CreationName="" DTS:DTSID="{EE6E0D53-711A-4260-A8E9-25F634049637}" DTS:IncludeInDebugDump="2345" DTS:Namespace="User" DTS:ObjectName="SqlcmdExecutable">
+      <DTS:VariableValue DTS:DataType="8">__CONFIGURE_SQLCMD__</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable DTS:refId="Package\Import CSV to staging" DTS:CreationName="Microsoft.ExecuteProcess" DTS:DTSID="{7798B201-CDD3-4D3C-BE70-29E9EE5BF691}" DTS:ExecutableType="Microsoft.ExecuteProcess" DTS:LocaleID="-1" DTS:ObjectName="Import CSV to staging" DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1" DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression DTS:Name="Arguments">@[User::ImportArguments]</DTS:PropertyExpression>
+      <DTS:PropertyExpression DTS:Name="Executable">@[User::PythonExecutable]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <ExecuteProcessData Executable="python.exe" Arguments="--help" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable DTS:refId="Package\Load warehouse" DTS:CreationName="Microsoft.ExecuteProcess" DTS:DTSID="{9B4800C0-9D37-4B2B-990A-9BEB3EB8114F}" DTS:ExecutableType="Microsoft.ExecuteProcess" DTS:LocaleID="-1" DTS:ObjectName="Load warehouse" DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1" DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression DTS:Name="Arguments">@[User::SqlcmdArguments]</DTS:PropertyExpression>
+      <DTS:PropertyExpression DTS:Name="Executable">@[User::SqlcmdExecutable]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <ExecuteProcessData Executable="sqlcmd.exe" Arguments="-?" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint DTS:refId="Package.PrecedenceConstraints[{AD7D2E5D-DF04-438E-A31A-333F9B2EAC06\}]" DTS:CreationName="" DTS:DTSID="{AD7D2E5D-DF04-438E-A31A-333F9B2EAC06}" DTS:From="Package\Import CSV to staging" DTS:LogicalAnd="True" DTS:ObjectName="{AD7D2E5D-DF04-438E-A31A-333F9B2EAC06}" DTS:To="Package\Load warehouse" />
+  </DTS:PrecedenceConstraints>
+</DTS:Executable>

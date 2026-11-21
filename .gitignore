@@ -9,6 +9,6 @@ __pycache__/
 .env
 .env.*
 !.env.example
-KIEM_TRA_HIEN_TRANG_BI.md
+BI_CURRENT_STATE_ASSESSMENT.md
 olist-download.zip
 2_Dataset/raw/

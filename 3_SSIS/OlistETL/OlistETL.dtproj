@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Project xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
+  <DeploymentModel>Project</DeploymentModel>
+  <State /><SchemaVersion>9.0.1.0</SchemaVersion><ProductVersion>17.0.1016.0</ProductVersion><DeploymentModelSpecificContent>
+    <Manifest><SSIS:Project SSIS:ProtectionLevel="DontSaveSensitive">
+  <SSIS:Properties>
+    <SSIS:Property SSIS:Name="ID">{79ced76a-b55c-4704-866d-c95631816932}</SSIS:Property>
+    <SSIS:Property SSIS:Name="Name">OlistETL</SSIS:Property>
+    <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+    <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+    <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
+    <SSIS:Property SSIS:Name="VersionComments">
+    </SSIS:Property>
+    <SSIS:Property SSIS:Name="CreationDate">2026-11-21T00:46:59.042693+07:00</SSIS:Property>
+    <SSIS:Property SSIS:Name="CreatorName" />
+    <SSIS:Property SSIS:Name="CreatorComputerName" />
+    <SSIS:Property SSIS:Name="Description">
+    </SSIS:Property>
+    <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
+  </SSIS:Properties>
+  <SSIS:Packages>
+    <SSIS:Package SSIS:Name="OlistETL.dtsx" SSIS:EntryPoint="1" />
+  </SSIS:Packages>
+  <SSIS:ConnectionManagers />
+  <SSIS:DeploymentInfo>
+    <SSIS:ProjectConnectionParameters />
+    <SSIS:PackageInfo>
+      <SSIS:PackageMetaData SSIS:Name="OlistETL.dtsx">
+        <SSIS:Properties>
+          <SSIS:Property SSIS:Name="ID">{6088A26B-C7C1-4CE4-B5AA-CFCC47B8171A}</SSIS:Property>
+          <SSIS:Property SSIS:Name="Name">OlistETL</SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionComments">
+          </SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionGUID">{435CCC3B-9D29-4CFA-9D9E-EA4D84A274BC}</SSIS:Property>
+          <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+          <SSIS:Property SSIS:Name="Description">
+          </SSIS:Property>
+          <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+        </SSIS:Properties>
+        <SSIS:Parameters />
+      </SSIS:PackageMetaData>
+    </SSIS:PackageInfo>
+  </SSIS:DeploymentInfo>
+</SSIS:Project></Manifest></DeploymentModelSpecificContent>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{f6af119a-3728-45e2-84bb-004481727976}</ProjectGuid>
+  </PropertyGroup>
+<Database>
+    <Name>OlistETL.database</Name>
+    <FullPath>OlistETL.database</FullPath>
+  </Database>
+  <DataSources />
+  <DataSourceViews />
+  <ControlFlowParts />
+  <Miscellaneous />
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <OutputPath>bin</OutputPath>
+        <ConnectionMappings />
+        <ConnectionProviderMappings />
+        <ConnectionSecurityMappings />
+        <DatabaseStorageLocations />
+        <TargetServerVersion>SQLServer2016</TargetServerVersion>
+        <AzureMode>false</AzureMode>
+        <LinkedAzureTenantId />
+        <LinkedAzureAccountId />
+        <LinkedAzureSSISIR />
+        <LinkedAzureStorage />
+        <RemoteExecutionFolder />
+        <ParameterConfigurationValues /></Options>
+    </Configuration>
+  </Configurations>
+</Project>

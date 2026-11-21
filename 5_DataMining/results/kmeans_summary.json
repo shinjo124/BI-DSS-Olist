@@ -1,0 +1,8 @@
+{
+  "snapshot_exclusive": "2018-10-18",
+  "customers": 94983,
+  "seed": 42,
+  "silhouette_sample_size": 5000,
+  "selected_k": 3,
+  "selection": "highest sampled silhouette among k=2..8"
+}

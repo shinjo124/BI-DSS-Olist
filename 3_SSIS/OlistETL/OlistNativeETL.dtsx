@@ -13,8 +13,8 @@
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
   DTS:TransactionOption="2"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{094B063D-48E9-465B-8C5F-9B5E1B86C854}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{5375C045-5DD5-44CC-A703-998600DC4E1A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -9691,6 +9691,28 @@
           Id="Package\Validate Staging and Prepare Warehouse"
           TopLeft="467.214286067048,646.900000239296" />
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="418.528571463544,189.123529465389">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.5294117975503"
+              Start="0,0"
+              End="0,15.0294117975503">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.0294117975503" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Step 1]"
           TopLeft="260.271427982985,100.423529391321">
           <EdgeLayout.Curve>
@@ -9713,197 +9735,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Step 2]"
-          TopLeft="421.600000005322,118.876470614377">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.647058851012"
-              Start="0,0"
-              End="0,21.147058851012">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.147058851012" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Step 4]"
-          TopLeft="417.457142889834,253.25294126294">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,22.5294117975501"
-              Start="0,0"
-              End="0,15.0294117975501">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.0294117975501" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Step 5]"
-          TopLeft="419.1,317.38235306049">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,24.8235294425982"
-              Start="0,0"
-              End="0,17.3235294425982">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.3235294425982" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Step 6]"
-          TopLeft="421.242857147419,383.805882503088">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,24.0588235609156"
-              Start="0,0"
-              End="0,16.5588235609156">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.5588235609156" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Step 7]"
-          TopLeft="421.957142863225,449.464706064004">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,22.5294117975504"
-              Start="0,0"
-              End="0,15.0294117975504">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.0294117975504" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Step 8]"
-          TopLeft="420.528571431613,513.594117861554">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27.1176470876461"
-              Start="0,0"
-              End="0,19.6176470876461">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.6176470876461" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Step 9]"
-          TopLeft="420.528571431612,582.3117649492">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="126.419047968769,64.5882352900961"
-              Start="0,0"
-              End="126.419047968769,57.0882352900961">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.4910969769357" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.4910969769357"
-                    Point2="0,38.4910969769357"
-                    Point3="4,38.4910969769357" />
-                  <mssgle:LineSegment
-                    End="122.419047968769,38.4910969769357" />
-                  <mssgle:CubicBezierSegment
-                    Point1="122.419047968769,38.4910969769357"
-                    Point2="126.419047968769,38.4910969769357"
-                    Point3="126.419047968769,42.4910969769357" />
-                  <mssgle:LineSegment
-                    End="126.419047968769,57.0882352900961" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Step 10]"
-          TopLeft="622.680952733714,646.900000239296">
+          TopLeft="622.680952733715,646.900000239296">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="117.133333663288,-62.505882172632"
+              EndConnector="117.133333663287,-62.5058821726318"
               Start="0,0"
-              End="117.133333663288,-55.005882172632">
+              End="117.133333663287,-55.0058821726318">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-21.255755094077" />
+                    End="0,-21.2557550940769" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-21.255755094077"
-                    Point2="0,-25.255755094077"
-                    Point3="4,-25.255755094077" />
+                    Point1="0,-21.2557550940769"
+                    Point2="0,-25.2557550940769"
+                    Point3="4,-25.2557550940769" />
                   <mssgle:LineSegment
-                    End="113.133333663288,-25.255755094077" />
+                    End="113.133333663287,-25.2557550940769" />
                   <mssgle:CubicBezierSegment
-                    Point1="113.133333663288,-25.255755094077"
-                    Point2="117.133333663288,-25.255755094077"
-                    Point3="117.133333663288,-29.255755094077" />
+                    Point1="113.133333663287,-25.2557550940769"
+                    Point2="117.133333663287,-25.2557550940769"
+                    Point3="117.133333663287,-29.2557550940769" />
                   <mssgle:LineSegment
-                    End="117.133333663288,-55.005882172632" />
+                    End="117.133333663287,-55.0058821726318" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10089,19 +9945,163 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="418.528571463544,189.123529465389">
+          Id="Package.PrecedenceConstraints[Step 2]"
+          TopLeft="421.600000005322,118.876470614377">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,22.5294117975503"
+              EndConnector="0,28.647058851012"
               Start="0,0"
-              End="0,15.0294117975503">
+              End="0,21.147058851012">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.0294117975503" />
+                    End="0,21.147058851012" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Step 4]"
+          TopLeft="417.457142889834,253.25294126294">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.5294117975501"
+              Start="0,0"
+              End="0,15.0294117975501">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.0294117975501" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Step 5]"
+          TopLeft="419.1,317.38235306049">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.8235294425982"
+              Start="0,0"
+              End="0,17.3235294425982">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.3235294425982" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Step 6]"
+          TopLeft="421.242857147419,383.805882503088">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0588235609156"
+              Start="0,0"
+              End="0,16.5588235609156">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5588235609156" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Step 7]"
+          TopLeft="421.957142863225,449.464706064004">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.5294117975504"
+              Start="0,0"
+              End="0,15.0294117975504">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.0294117975504" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Step 8]"
+          TopLeft="420.528571431613,513.594117861554">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.1176470876461"
+              Start="0,0"
+              End="0,19.6176470876461">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.6176470876461" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Step 9]"
+          TopLeft="420.528571431612,582.3117649492">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126.419047968769,64.5882352900959"
+              Start="0,0"
+              End="126.419047968769,57.0882352900959">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.4910969769355" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.4910969769355"
+                    Point2="0,38.4910969769355"
+                    Point3="4,38.4910969769355" />
+                  <mssgle:LineSegment
+                    End="122.419047968769,38.4910969769355" />
+                  <mssgle:CubicBezierSegment
+                    Point1="122.419047968769,38.4910969769355"
+                    Point2="126.419047968769,38.4910969769355"
+                    Point3="126.419047968769,42.4910969769355" />
+                  <mssgle:LineSegment
+                    End="126.419047968769,57.0882352900959" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10117,57 +10117,61 @@
     design-time-name="Package\Load CategoryTranslation CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="170.4,41.6"
           Id="Package\Load CategoryTranslation CSV\OLE DB Destination"
-          TopLeft="NaN,NaN" />
+          TopLeft="243.999996364117,76.9999988526106" />
         <NodeLayout
-          Size="NaN,NaN"
-          Id="Package\Load CategoryTranslation CSV\Data Conversion"
-          TopLeft="NaN,NaN" />
-        <NodeLayout
-          Size="NaN,NaN"
+          Size="150.4,41.6"
           Id="Package\Load CategoryTranslation CSV\Flat File Source"
-          TopLeft="NaN,NaN" />
+          TopLeft="0,0" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Load CategoryTranslation CSV\Data Conversion"
+          TopLeft="0.99999998509881,67.9999989867211" />
         <EdgeLayout
-          Id="Package\Load CategoryTranslation CSV.Paths[Converted Rows]"
-          TopLeft="NaN,NaN">
+          Id="Package\Load CategoryTranslation CSV.Paths[CSV Rows]"
+          TopLeft="76.8999999925494,41.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,26.3999989867211"
               Start="0,0"
-              End="0,0">
+              End="0,18.8999989867211">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.8999989867211" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load CategoryTranslation CSV.Paths[CSV Rows]"
-          TopLeft="NaN,NaN">
+          Id="Package\Load CategoryTranslation CSV.Paths[Converted Rows]"
+          TopLeft="156.199999985099,96.0999989196658">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="87.7999963790178,0"
               Start="0,0"
-              End="0,0">
+              End="80.2999963790178,0">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="80.2999963790178,0" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10177,57 +10181,61 @@
     design-time-name="Package\Load Customers CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="155.2,41.6"
           Id="Package\Load Customers CSV\Data Conversion"
-          TopLeft="NaN,NaN" />
+          TopLeft="53.9999991953374,147.999997794628" />
         <NodeLayout
-          Size="NaN,NaN"
-          Id="Package\Load Customers CSV\Flat File Source"
-          TopLeft="NaN,NaN" />
-        <NodeLayout
-          Size="NaN,NaN"
+          Size="170.4,41.6"
           Id="Package\Load Customers CSV\OLE DB Destination"
-          TopLeft="NaN,NaN" />
+          TopLeft="374.999994412064,149.999997764826" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Load Customers CSV\Flat File Source"
+          TopLeft="52.9999992102385,71.9999989271164" />
         <EdgeLayout
-          Id="Package\Load Customers CSV.Paths[Converted Rows]"
-          TopLeft="NaN,NaN">
+          Id="Package\Load Customers CSV.Paths[CSV Rows]"
+          TopLeft="129.899999202788,113.599998927116">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,34.3999988675118"
               Start="0,0"
-              End="0,0">
+              End="0,26.8999988675118">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.8999988675118" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Customers CSV.Paths[CSV Rows]"
-          TopLeft="NaN,NaN">
+          Id="Package\Load Customers CSV.Paths[Converted Rows]"
+          TopLeft="209.199999195337,169.799997779727">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="165.799995216727,0"
               Start="0,0"
-              End="0,0">
+              End="158.299995216727,0">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="158.299995216727,0" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10237,33 +10245,35 @@
     design-time-name="Package\Load DimCustomer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="177.6,41.6"
           Id="Package\Load DimCustomer\DimCustomer Source"
-          TopLeft="NaN,NaN" />
+          TopLeft="14.9999997764826,0" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="198.4,41.6"
           Id="Package\Load DimCustomer\DimCustomer Destination"
-          TopLeft="NaN,NaN" />
+          TopLeft="0,97.9999985396862" />
         <EdgeLayout
           Id="Package\Load DimCustomer.Paths[Warehouse Rows]"
-          TopLeft="NaN,NaN">
+          TopLeft="101.499999888241,41.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,56.3999985396862"
               Start="0,0"
-              End="0,0">
+              End="0,48.8999985396862">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.8999985396862" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10273,33 +10283,35 @@
     design-time-name="Package\Load DimDate">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="154.4,41.6"
           Id="Package\Load DimDate\DimDate Source"
-          TopLeft="NaN,NaN" />
+          TopLeft="2.9999999552965,9.99999985098839" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="175.2,41.6"
           Id="Package\Load DimDate\DimDate Destination"
-          TopLeft="NaN,NaN" />
+          TopLeft="0,103.999998450279" />
         <EdgeLayout
           Id="Package\Load DimDate.Paths[Warehouse Rows]"
-          TopLeft="NaN,NaN">
+          TopLeft="83.8999999776482,51.5999998509884">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,52.3999985992909"
               Start="0,0"
-              End="0,0">
+              End="0,44.8999985992909">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.8999985992909" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10309,33 +10321,35 @@
     design-time-name="Package\Load DimOrder">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="180,41.6"
           Id="Package\Load DimOrder\DimOrder Destination"
-          TopLeft="NaN,NaN" />
+          TopLeft="301.999995499849,58.9999991208315" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="159.2,41.6"
           Id="Package\Load DimOrder\DimOrder Source"
-          TopLeft="NaN,NaN" />
+          TopLeft="30.999999538064,52.9999992102385" />
         <EdgeLayout
           Id="Package\Load DimOrder.Paths[Warehouse Rows]"
-          TopLeft="NaN,NaN">
+          TopLeft="190.199999538064,76.799999165535">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="111.799995961785,0"
               Start="0,0"
-              End="0,0">
+              End="104.299995961785,0">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="104.299995961785,0" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10345,33 +10359,35 @@
     design-time-name="Package\Load DimPayment">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="194.4,41.6"
           Id="Package\Load DimPayment\DimPayment Destination"
-          TopLeft="NaN,NaN" />
+          TopLeft="258.999996140599,121.999998182058" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="185.6,41.6"
           Id="Package\Load DimPayment\Payment Types Source"
-          TopLeft="NaN,NaN" />
+          TopLeft="262.999996080995,16.9999997466803" />
         <EdgeLayout
           Id="Package\Load DimPayment.Paths[Payment Types]"
-          TopLeft="NaN,NaN">
+          TopLeft="355.999996110797,58.5999997466803">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,63.3999984353781"
               Start="0,0"
-              End="0,0">
+              End="0,55.8999984353781">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.8999984353781" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10381,33 +10397,35 @@
     design-time-name="Package\Load DimProduct">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="168,41.6"
           Id="Package\Load DimProduct\DimProduct Source"
-          TopLeft="NaN,NaN" />
+          TopLeft="227.999996602535,26.9999995976687" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="188.8,41.6"
           Id="Package\Load DimProduct\DimProduct Destination"
-          TopLeft="NaN,NaN" />
+          TopLeft="209.999996870756,158.999997630715" />
         <EdgeLayout
           Id="Package\Load DimProduct.Paths[Warehouse Rows]"
-          TopLeft="NaN,NaN">
+          TopLeft="308.199996736646,68.5999995976687">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,90.3999980330467"
               Start="0,0"
-              End="0,0">
+              End="0,82.8999980330467">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,82.8999980330467" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10417,33 +10435,35 @@
     design-time-name="Package\Load DimSeller">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="179.2,41.6"
           Id="Package\Load DimSeller\DimSeller Destination"
-          TopLeft="NaN,NaN" />
+          TopLeft="40.9999993890524,214.99999679625" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="158.4,41.6"
           Id="Package\Load DimSeller\DimSeller Source"
-          TopLeft="NaN,NaN" />
+          TopLeft="55.999999165535,103.999998450279" />
         <EdgeLayout
           Id="Package\Load DimSeller.Paths[Warehouse Rows]"
-          TopLeft="NaN,NaN">
+          TopLeft="132.899999277294,145.599998450279">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,69.399998345971"
               Start="0,0"
-              End="0,0">
+              End="0,61.899998345971">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.899998345971" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10453,33 +10473,35 @@
     design-time-name="Package\Load FactOrder">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="160,41.6"
           Id="Package\Load FactOrder\FactOrder Source"
-          TopLeft="NaN,NaN" />
+          TopLeft="13.9999997913838,11.9999998211861" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="180.8,41.6"
           Id="Package\Load FactOrder\FactOrder Destination"
-          TopLeft="NaN,NaN" />
+          TopLeft="1.99999997019769,96.9999985545874" />
         <EdgeLayout
           Id="Package\Load FactOrder.Paths[Warehouse Rows]"
-          TopLeft="NaN,NaN">
+          TopLeft="93.1999998807907,53.5999998211861">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,43.3999987334013"
               Start="0,0"
-              End="0,0">
+              End="0,35.8999987334013">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.8999987334013" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10489,33 +10511,35 @@
     design-time-name="Package\Load FactPayment">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="174.4,41.6"
           Id="Package\Load FactPayment\FactPayment Source"
-          TopLeft="NaN,NaN" />
+          TopLeft="38.9999998360872,4.99999992549419" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="195.2,41.6"
           Id="Package\Load FactPayment\FactPayment Destination"
-          TopLeft="NaN,NaN" />
+          TopLeft="28.9999999850988,97.9999985396862" />
         <EdgeLayout
           Id="Package\Load FactPayment.Paths[Warehouse Rows]"
-          TopLeft="NaN,NaN">
+          TopLeft="126.399999910593,46.5999999254942">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,51.3999986141921"
               Start="0,0"
-              End="0,0">
+              End="0,43.8999986141921">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.8999986141921" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10525,33 +10549,35 @@
     design-time-name="Package\Load FactSales">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="157.6,41.6"
           Id="Package\Load FactSales\FactSales Source"
-          TopLeft="NaN,NaN" />
+          TopLeft="17.9999997317791,16.9999997466803" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="178.4,41.6"
           Id="Package\Load FactSales\FactSales Destination"
-          TopLeft="NaN,NaN" />
+          TopLeft="0,102.99999846518" />
         <EdgeLayout
           Id="Package\Load FactSales.Paths[Warehouse Rows]"
-          TopLeft="NaN,NaN">
+          TopLeft="92.9999998658895,58.5999997466803">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,44.3999987185002"
               Start="0,0"
-              End="0,0">
+              End="0,36.8999987185002">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.8999987185002" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10561,57 +10587,61 @@
     design-time-name="Package\Load OrderItems CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
-          Id="Package\Load OrderItems CSV\Data Conversion"
-          TopLeft="NaN,NaN" />
-        <NodeLayout
-          Size="NaN,NaN"
+          Size="170.4,41.6"
           Id="Package\Load OrderItems CSV\OLE DB Destination"
-          TopLeft="NaN,NaN" />
+          TopLeft="391.999994158745,213.999996811152" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="155.2,41.6"
+          Id="Package\Load OrderItems CSV\Data Conversion"
+          TopLeft="0.999999985098825,208.999996885657" />
+        <NodeLayout
+          Size="150.4,41.6"
           Id="Package\Load OrderItems CSV\Flat File Source"
-          TopLeft="NaN,NaN" />
+          TopLeft="9.99999985098837,113.999998301268" />
         <EdgeLayout
-          Id="Package\Load OrderItems CSV.Paths[CSV Rows]"
-          TopLeft="NaN,NaN">
+          Id="Package\Load OrderItems CSV.Paths[Converted Rows]"
+          TopLeft="156.199999985099,232.299996848404">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="235.799994173646,0"
               Start="0,0"
-              End="0,0">
+              End="228.299994173646,0">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="228.299994173646,0" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load OrderItems CSV.Paths[Converted Rows]"
-          TopLeft="NaN,NaN">
+          Id="Package\Load OrderItems CSV.Paths[CSV Rows]"
+          TopLeft="81.8999999180436,155.599998301268">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,53.3999985843896"
               Start="0,0"
-              End="0,0">
+              End="0,45.8999985843896">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.8999985843896" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10621,57 +10651,61 @@
     design-time-name="Package\Load Orders CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
-          Id="Package\Load Orders CSV\OLE DB Destination"
-          TopLeft="NaN,NaN" />
-        <NodeLayout
-          Size="NaN,NaN"
+          Size="150.4,41.6"
           Id="Package\Load Orders CSV\Flat File Source"
-          TopLeft="NaN,NaN" />
+          TopLeft="52.8571429696618,16.8235293970182" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="170.4,63.2"
+          Id="Package\Load Orders CSV\OLE DB Destination"
+          TopLeft="322.857143544421,100.941176382109" />
+        <NodeLayout
+          Size="155.2,41.6"
           Id="Package\Load Orders CSV\Data Conversion"
-          TopLeft="NaN,NaN" />
+          TopLeft="55.7142858328868,110.882352843984" />
         <EdgeLayout
-          Id="Package\Load Orders CSV.Paths[Converted Rows]"
-          TopLeft="NaN,NaN">
+          Id="Package\Load Orders CSV.Paths[CSV Rows]"
+          TopLeft="130.685714401274,58.4235293970182">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,52.4588234469656"
               Start="0,0"
-              End="0,0">
+              End="0,44.9588234469656">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.9588234469656" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Orders CSV.Paths[CSV Rows]"
-          TopLeft="NaN,NaN">
+          Id="Package\Load Orders CSV.Paths[Converted Rows]"
+          TopLeft="210.914285832887,132.111764613047">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="111.942857711534,0"
               Start="0,0"
-              End="0,0">
+              End="104.442857711534,0">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="104.442857711534,0" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10681,57 +10715,61 @@
     design-time-name="Package\Load Payments CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="155.2,41.6"
           Id="Package\Load Payments CSV\Data Conversion"
-          TopLeft="NaN,NaN" />
+          TopLeft="2.99999995529653,131.999998033047" />
         <NodeLayout
-          Size="NaN,NaN"
-          Id="Package\Load Payments CSV\Flat File Source"
-          TopLeft="NaN,NaN" />
-        <NodeLayout
-          Size="NaN,NaN"
+          Size="170.4,41.6"
           Id="Package\Load Payments CSV\OLE DB Destination"
-          TopLeft="NaN,NaN" />
+          TopLeft="249.99999627471,132.999998018146" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Load Payments CSV\Flat File Source"
+          TopLeft="7.99999988079072,43.9999993443489" />
         <EdgeLayout
-          Id="Package\Load Payments CSV.Paths[Converted Rows]"
-          TopLeft="NaN,NaN">
+          Id="Package\Load Payments CSV.Paths[CSV Rows]"
+          TopLeft="81.8999999180436,85.5999993443489">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,46.3999986886978"
               Start="0,0"
-              End="0,0">
+              End="0,38.8999986886978">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.8999986886978" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Payments CSV.Paths[CSV Rows]"
-          TopLeft="NaN,NaN">
+          Id="Package\Load Payments CSV.Paths[Converted Rows]"
+          TopLeft="158.199999955297,153.299998025596">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="91.7999963194133,0"
               Start="0,0"
-              End="0,0">
+              End="84.2999963194133,0">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="84.2999963194133,0" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10741,57 +10779,61 @@
     design-time-name="Package\Load Products CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
-          Id="Package\Load Products CSV\Data Conversion"
-          TopLeft="NaN,NaN" />
-        <NodeLayout
-          Size="NaN,NaN"
-          Id="Package\Load Products CSV\OLE DB Destination"
-          TopLeft="NaN,NaN" />
-        <NodeLayout
-          Size="NaN,NaN"
+          Size="150.4,41.6"
           Id="Package\Load Products CSV\Flat File Source"
-          TopLeft="NaN,NaN" />
+          TopLeft="15.9999997615814,13.9999997913837" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Load Products CSV\OLE DB Destination"
+          TopLeft="259.999996125698,94.9999985843897" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Load Products CSV\Data Conversion"
+          TopLeft="7.9999998807907,98.9999985247851" />
         <EdgeLayout
-          Id="Package\Load Products CSV.Paths[Converted Rows]"
-          TopLeft="NaN,NaN">
+          Id="Package\Load Products CSV.Paths[CSV Rows]"
+          TopLeft="88.3999998211861,55.5999997913837">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,43.3999987334013"
               Start="0,0"
-              End="0,0">
+              End="0,35.8999987334013">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.8999987334013" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Products CSV.Paths[CSV Rows]"
-          TopLeft="NaN,NaN">
+          Id="Package\Load Products CSV.Paths[Converted Rows]"
+          TopLeft="163.199999880791,117.799998554587">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="96.7999962449074,0"
               Start="0,0"
-              End="0,0">
+              End="89.2999962449074,0">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="89.2999962449074,0" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10801,81 +10843,87 @@
     design-time-name="Package\Load Reviews CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="170.4,41.6"
           Id="Package\Load Reviews CSV\OLE DB Destination"
-          TopLeft="NaN,NaN" />
+          TopLeft="331.999995052815,245.999996334314" />
         <NodeLayout
-          Size="NaN,NaN"
-          Id="Package\Load Reviews CSV\Destination Types"
-          TopLeft="NaN,NaN" />
-        <NodeLayout
-          Size="NaN,NaN"
-          Id="Package\Load Reviews CSV\Data Conversion"
-          TopLeft="NaN,NaN" />
-        <NodeLayout
-          Size="NaN,NaN"
+          Size="150.4,41.6"
           Id="Package\Load Reviews CSV\Flat File Source"
-          TopLeft="NaN,NaN" />
+          TopLeft="58.9999991208316,30.999999538064" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Load Reviews CSV\Data Conversion"
+          TopLeft="59.9999991059303,139.999997913837" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Load Reviews CSV\Destination Types"
+          TopLeft="51.9999992251395,246.999996319413" />
         <EdgeLayout
-          Id="Package\Load Reviews CSV.Paths[UTF8 Source]"
-          TopLeft="NaN,NaN">
+          Id="Package\Load Reviews CSV.Paths[Typed Rows]"
+          TopLeft="214.39999922514,267.299996326864">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="117.599995827675,0"
               Start="0,0"
-              End="0,0">
+              End="110.099995827675,0">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="110.099995827675,0" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Reviews CSV.Paths[Typed Rows]"
-          TopLeft="NaN,NaN">
+          Id="Package\Load Reviews CSV.Paths[UTF8 Source]"
+          TopLeft="135.899999113381,72.599999538064">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,67.3999983757735"
               Start="0,0"
-              End="0,0">
+              End="0,59.8999983757735">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.8999983757735" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Reviews CSV.Paths[Unicode Rows]"
-          TopLeft="NaN,NaN">
+          TopLeft="135.399999165535,181.599997913837">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,65.3999984055758"
               Start="0,0"
-              End="0,0">
+              End="0,57.8999984055758">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.8999984055758" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10885,81 +10933,87 @@
     design-time-name="Package\Load Sellers CSV">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="150.4,41.6"
           Id="Package\Load Sellers CSV\Flat File Source"
-          TopLeft="NaN,NaN" />
+          TopLeft="9.99999985098839,0.999999985098839" />
         <NodeLayout
-          Size="NaN,NaN"
-          Id="Package\Load Sellers CSV\Data Conversion"
-          TopLeft="NaN,NaN" />
-        <NodeLayout
-          Size="NaN,NaN"
-          Id="Package\Load Sellers CSV\OLE DB Destination"
-          TopLeft="NaN,NaN" />
-        <NodeLayout
-          Size="NaN,NaN"
+          Size="162.4,41.6"
           Id="Package\Load Sellers CSV\Destination Types"
-          TopLeft="NaN,NaN" />
+          TopLeft="12.9999998062849,183.999997258186" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Load Sellers CSV\Data Conversion"
+          TopLeft="11.9999998211861,93.9999985992909" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Load Sellers CSV\OLE DB Destination"
+          TopLeft="406.999993935227,180.99999730289" />
         <EdgeLayout
           Id="Package\Load Sellers CSV.Paths[Unicode Rows]"
-          TopLeft="NaN,NaN">
+          TopLeft="91.8999998137355,135.599998599291">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,48.3999986588955"
               Start="0,0"
-              End="0,0">
+              End="0,40.8999986588955">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.8999986588955" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Sellers CSV.Paths[UTF8 Source]"
-          TopLeft="NaN,NaN">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
-              Start="0,0"
-              End="0,0">
-              <mssgle:Curve.Segments>
-                <assembly:Null />
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Sellers CSV.Paths[Typed Rows]"
-          TopLeft="NaN,NaN">
+          TopLeft="175.399999806285,203.299997280538">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="231.599994128943,0"
               Start="0,0"
-              End="0,0">
+              End="224.099994128943,0">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="224.099994128943,0" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Sellers CSV.Paths[UTF8 Source]"
+          TopLeft="87.3999998360872,42.5999999850988">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.399998614192"
+              Start="0,0"
+              End="0,43.899998614192">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.899998614192" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

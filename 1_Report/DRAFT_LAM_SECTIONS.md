@@ -4,7 +4,7 @@ Lam and Kiet prepared this business intelligence study of the Brazilian Olist ec
 
 ## Data selection and warehouse loading
 
-The project uses the Brazilian e-commerce public dataset provided by Olist. Eight CSV files provide order, customer, item, product, category translation, seller, payment, and review data. Product descriptions, review text, and the geolocation file are outside the present analysis. The source archive and individual file hashes are recorded in `2_Dataset/DATASET_PROFILE.md` so the team can use the same snapshot.
+The project uses the Brazilian e-commerce public dataset provided by Olist. Eight CSV files supply order, customer, item, product, category translation, seller, payment, and review data for the warehouse. The delivery feature experiment also uses the geolocation CSV to estimate seller-to-customer distance. The source archive and individual file hashes are recorded in `2_Dataset/DATASET_PROFILE.md` so the team can use the same snapshot.
 
 The warehouse includes orders with at least one item whose status is neither canceled nor unavailable. Other statuses remain in scope. The purchase calendar date is the common analysis date. The resulting warehouse contains 98,199 orders and 112,101 item rows. Item revenue is BRL 13,494,400.74 and freight is BRL 2,241,126.29. Revenue is the sum of item prices excluding freight; it is not settled accounting revenue.
 
@@ -55,7 +55,7 @@ The four-order subset returned BRL 400.00 in payments, with credit card at 63.88
 
 Three live Excel PivotTables cover Q1 annual orders and revenue, Q4 payment method share, and Q7 delivery by state. Refreshing on the local SSAS instance reproduced the three primary totals. Full results are in `4_SSAS/MDX/results/` and the live workbook is in `4_SSAS/Excel/`.
 
-Two Power BI projects each pair a chart with a detail table for every question. The editable model imports selected columns from all warehouse rows across six dimensions and three fact tables, with 12 relationships. The warehouse calculations matched the SSAS exports. The live project queries the SSAS cube directly. Power BI Desktop confirmed the connection and returned BRL 15,738,221.95 in total payments on Q4, with credit cards accounting for 78.468%.
+Two Power BI projects each cover ten questions, with quarterly results and annual totals together on Q1. The editable model imports selected columns from all warehouse rows across six dimensions and three fact tables, with 12 relationships. The warehouse calculations matched the SSAS exports. The live project queries the SSAS cube directly. The reconciled Q4 results total BRL 15,738,221.95 in payments, with credit cards accounting for 78.468%.
 
 ## Low review prediction using Random Forest
 
@@ -76,6 +76,12 @@ We trained on 56,818 deliveries before 1 April 2018. We chose the threshold on 1
 | True positives | 257 | 0 |
 
 The holdout shows modest ranking signal and low recall at the selected threshold. Review answer time only approximates when the label became observable, and the final snapshot cannot reconstruct past review revisions. The short holdout and absence of intervention costs limit operational conclusions.
+
+## Delivery Feature Comparison
+
+We compared the original forest with a late-delivery rule and two models using extra information available at delivery. The additional features were seller-to-customer distance estimated from ZIP prefixes, total product weight, first item category and freight share. All methods used the same delivery-time splits. On the previously examined holdout, average precision was 0.0887 for the late-delivery rule, 0.1804 for the original forest, 0.1817 for the enriched forest and 0.1816 for enriched gradient boosting.
+
+We kept the original forest for the project. When limited to the top 5% of holdout orders, it found 206 low reviews in 688 alerts, compared with 195 for each enriched model and 75 for the late-delivery rule. At that budget the original achieved 29.9% precision and 18.2% recall. The small ranking gain from enrichment did not translate into more detections at this alert budget.
 
 ## Reproduction and remaining checks
 

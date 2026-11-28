@@ -75,9 +75,9 @@ Change server and database arguments for the intended target. This import replac
 
 `sql/reference_questions_01_05.sql` contains SQL reference queries for Lam's five questions. `sql/reference_questions_01_05_results.txt` records their output on the checked full snapshot without report filters. These outputs come from the SQL warehouse, not the SSAS cube. Apply identical filters and definitions when comparing them to SSAS, MDX, or Power BI.
 
-`sql/reference_questions_06_08.sql` supplies the Q6 and Q8 group and overall checks for the first cube checkpoint. It deduplicates order membership within each category or seller and computes seller revenue separately at item grain. `sql/reference_questions_06_08_results.txt` records the full-snapshot output. These are warehouse references, pending reconciliation with the cube.
+`sql/reference_questions_06_08.sql` supplies the Q6 and Q8 group and overall checks. It deduplicates order membership within each category or seller and computes seller revenue separately at item grain. `sql/reference_questions_06_08_results.txt` records the full-snapshot output. The saved MDX rows reconcile with these SQL references.
 
-`sql/reference_questions_07_09_10.sql` covers Q7, Q9, and Q10. Its saved output uses the full snapshot; Q9 applies January through August in both years. Delivery averages and late rates use different eligibility counts, and Q10 retains each payment method. These results also await cube reconciliation.
+`sql/reference_questions_07_09_10.sql` covers Q7, Q9, and Q10. Its saved output uses the full snapshot, with Q9 restricted to January through August in both years. Delivery averages and late rates use different eligibility counts, and Q10 retains each payment method. All three results reconcile with the cube.
 
 An independent aggregation of the source CSVs matched the warehouse inputs to these results: delivery counts, eligible counts, delivery-day sums and late counts for all 27 states; revenue and freight for all 10 region/year groups; and payment amounts for all 28 weekday/method groups. Ratios are calculated from these sums and counts; the SSAS and Power BI calculations still require their own checks.
 

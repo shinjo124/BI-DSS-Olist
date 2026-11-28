@@ -40,3 +40,16 @@ Run `.\.venv\Scripts\python 5_DataMining/random_forest.py` from the repository r
 Each row is one eligible order. The label is the selected review score of 1 or 2. We use answer time as the availability proxy. Train on deliveries before 1 April 2018 whose review was available by the cutoff. Use deliveries from April through June whose review was available by 1 July to pick the threshold. Evaluate on deliveries from July through the exclusive 18 October snapshot cutoff with labels available before that date. These splits contain 56,818, 19,203, and 13,747 orders. The cutoffs excluded 625, 771, and 6 otherwise eligible labels, respectively.
 
 The chosen validation threshold was 0.55. On the holdout, the forest reached precision 25.1%, recall 22.7%, F1 0.239, ROC AUC 0.626, and average precision 0.180. The always-majority baseline reached F1 0.000, ROC AUC 0.500, and average precision 0.082. The forest flagged 1,022 orders and found 257 of 1,131 low reviews. That is enough to show some ranking signal but leaves 874 low reviews missed. The snapshot, short holdout, and possible review revisions limit interpretation. The model uses only signals available at delivery and supports retrospective exploration.
+
+### Delivery feature comparison
+
+Run `./.venv/Scripts/python 5_DataMining/random_forest.py --compare` to reproduce [the comparison](results/random_forest/model_comparison.csv) on the same time splits. The enriched models add freight as a share of order value, total product weight, the first item's category, and the maximum straight-line distance from any seller to the customer using median ZIP-prefix coordinates. The late-delivery rule ranks by days past the promise date. Model thresholds use validation F1. The top-5% check ranks each split by score and breaks ties by order ID.
+
+| Method | Validation average precision | Holdout average precision | Holdout low reviews found in 688 alerts |
+| --- | ---: | ---: | ---: |
+| Late-delivery rule | 0.1002 | 0.0887 | 75 |
+| Original Random Forest | 0.2302 | 0.1804 | 206 |
+| Enriched Random Forest | 0.2326 | 0.1817 | 195 |
+| Enriched gradient boosting | 0.2308 | 0.1816 | 195 |
+
+We retained the original forest for the project. Enrichment produced a small gain in overall ranking on the previously examined holdout, while the original found the most low reviews at the fixed alert budget. The original found 206 of 1,131 low reviews at that budget, giving 29.9% precision and 18.2% recall.

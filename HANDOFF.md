@@ -1,6 +1,6 @@
 # Project Handoff — 17 November 2026
 
-**Current as of 28 November 2026:** the cube, ten MDX queries, local PivotTables, Power BI snapshot, both mining implementations and the report files are available. Setup and evidence are in the [cube guide](4_SSAS/README.md), the [mining guide](5_DataMining/README.md), and the [current project plan](PROJECT_PLAN.md). The notes below preserve the earlier handoff.
+**Current as of 28 November 2026.** The cube, ten MDX queries, local PivotTables, Warehouse and Live Power BI reports, both mining implementations, and Word and PDF reports are available. Setup and evidence are in the [cube guide](4_SSAS/README.md), the [mining guide](5_DataMining/README.md), and the [current project plan](PROJECT_PLAN.md). The notes below preserve the earlier handoff.
 
 ## Goal and submission requirements
 

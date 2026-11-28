@@ -1,0 +1,3 @@
+SELECT {[Measures].[Revenue], [Measures].[MoM Growth]} ON 0,
+Descendants([Date].[Calendar].[Year].&[2017],[Date].[Calendar].[Month]) ON 1
+FROM [Olist]

@@ -1,0 +1,126 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "name": "All tables",
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "zoomValue": 70,
+      "nodes": [
+        {
+          "nodeIndex": "DimProduct",
+          "location": {
+            "x": 30,
+            "y": 20
+          },
+          "size": {
+            "width": 234,
+            "height": 200
+          },
+          "zIndex": 0
+        },
+        {
+          "nodeIndex": "DimSeller",
+          "location": {
+            "x": 30,
+            "y": 250
+          },
+          "size": {
+            "width": 234,
+            "height": 200
+          },
+          "zIndex": 1
+        },
+        {
+          "nodeIndex": "DimPayment",
+          "location": {
+            "x": 30,
+            "y": 520
+          },
+          "size": {
+            "width": 234,
+            "height": 200
+          },
+          "zIndex": 2
+        },
+        {
+          "nodeIndex": "FactSales",
+          "location": {
+            "x": 340,
+            "y": 20
+          },
+          "size": {
+            "width": 234,
+            "height": 200
+          },
+          "zIndex": 3
+        },
+        {
+          "nodeIndex": "FactOrder",
+          "location": {
+            "x": 340,
+            "y": 300
+          },
+          "size": {
+            "width": 234,
+            "height": 200
+          },
+          "zIndex": 4
+        },
+        {
+          "nodeIndex": "FactPayment",
+          "location": {
+            "x": 340,
+            "y": 600
+          },
+          "size": {
+            "width": 234,
+            "height": 200
+          },
+          "zIndex": 5
+        },
+        {
+          "nodeIndex": "DimDate",
+          "location": {
+            "x": 700,
+            "y": 20
+          },
+          "size": {
+            "width": 234,
+            "height": 200
+          },
+          "zIndex": 6
+        },
+        {
+          "nodeIndex": "DimCustomer",
+          "location": {
+            "x": 700,
+            "y": 380
+          },
+          "size": {
+            "width": 234,
+            "height": 200
+          },
+          "zIndex": 7
+        },
+        {
+          "nodeIndex": "DimOrder",
+          "location": {
+            "x": 700,
+            "y": 650
+          },
+          "size": {
+            "width": 234,
+            "height": 200
+          },
+          "zIndex": 8
+        }
+      ],
+      "isDefault": true
+    }
+  ],
+  "selectedDiagram": "All tables"
+}

@@ -1,0 +1,4 @@
+﻿"Member0","Key0","Payment Amount","Payment Share"
+"credit_card","[Payment].[Payment].&[14]","255.54","0.63885"
+"boleto","[Payment].[Payment].&[13]","126.54","0.31635"
+"voucher","[Payment].[Payment].&[15]","17.92","0.0448"

@@ -1,0 +1,3 @@
+SELECT {[Measures].[Avg Review], [Measures].[Review Count], [Measures].[Order Count]} ON 0,
+BottomCount(Filter([Product].[Category].[Category].Members,[Measures].[Review Count]>=100),10,[Measures].[Avg Review]) ON 1
+FROM [Olist]

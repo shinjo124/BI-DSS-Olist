@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "029d2be641ed5c88a741",
+  "displayName": "Q02 Top categories by revenue",
+  "displayOption": "FitToPage",
+  "width": 1120,
+  "height": 700
+}

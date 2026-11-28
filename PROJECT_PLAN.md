@@ -1,5 +1,18 @@
 # Olist BI Project Flow and Assignments
 
+## Delivery status as of 28 November 2026
+
+- [x] Built the editable SSAS project and processed the full and four-order cubes locally. The subset checks cover overlapping categories and sellers and missing reviews.
+- [x] Executed and reconciled all ten MDX analyses against independent SQL. The local full and subset Q4 totals were BRL 15,738,221.95 and BRL 400.00, respectively.
+- [x] Executed all ten questions in Visual Studio's native SSAS Browser and captured the results. Q4 used the visual designer and the other nine used the MDX editor.
+- [x] Verified three live full-snapshot Excel PivotTables and one live subset Q4 PivotTable. Both Q4 workbooks matched SQL for every amount and share.
+- [x] Built Power BI projects for the editable nine-table warehouse model and the live SSAS connection. The ten questions each have a chart and detail table. The warehouse calculations match SSAS and the live payment page was checked in Desktop.
+- [x] Completed both mining experiments and measured Random Forest on a later holdout. Exported the combined Word and PDF report.
+- [ ] Reproduce the workflow and verify live Power BI connectivity on the second machine.
+- [ ] Verify the instructor's Drive access and publish the reviewed submission. The existing native SSIS package requires machine-specific connections and has no separate rejected-row export.
+
+Use the [BI guide](4_SSAS/README.md) for setups and evidence. The assignments and first integration checklist below retain the division of work and cross-machine acceptance criteria.
+
 The team has two members: **A is Lam; B is Kiet.** This is the agreed starting split, based on the verified SQL/SSIS setup on Lam's machine. Rebalance if the actual workload or availability requires it. No deadline has been set, so stages show dependencies rather than dates. Each person prepares evidence and report content for their work; both cross-review.
 
 ## Project flow
@@ -30,10 +43,23 @@ flowchart TD
 
 Mining can run in parallel once the CSV and data rules are available. The team targets all 10 MDX queries and at least three Pivot analyses. These are team decisions, not explicit assignment counts for those sections.
 
-## First integration milestone
+## Current priorities — agreed 27 November 2026
+
+The data foundation has passed local checks: the warehouse and both alternative SSIS packages have full-snapshot validation, SQL references exist for all 10 questions, and K-Means has saved results and local reproduction evidence. The next priority is a processed SSAS cube and one verified analysis across the tools. Second-machine reproduction, final mining interpretation, and submission checks remain open.
+
+1. **Lam hands the warehouse to Kiet:** provide [schema and measure definitions](WAREHOUSE_DESIGN.md), [SSIS setup and validation evidence](3_SSIS/README.md), the checked dataset, and the SQL references below. Confirm the target database and portable connection settings together. Address failures found during integration before extending ETL functionality.
+2. **Kiet builds and processes the base cube; both complete Q4 end to end:** use the acceptance checklist below before expanding the reports to all 10 questions.
+3. **Both validate Q6 and Q8 next:** check category/seller membership, reviewed-order denominators, and grand totals against SQL. Then complete the remaining seven questions and at least three Pivot analyses.
+4. **Mining proceeds alongside cube work:** Lam finalizes the existing K-Means interpretation and limitations. Kiet implements Random Forest at delivery time with a temporal split, training-cutoff label availability, a baseline under the same split, and precision, recall, F1, ROC-AUC, and a confusion matrix. Finish evaluation before adding model complexity.
+5. **Build the report as evidence becomes available:** for every question, save the query, filters, actual output, screenshot, business meaning, and limitation together. Compare equivalent months for incomplete 2018 data; explain that reviews belong to orders and are not direct ratings of each seller. Finalize DOCX/PDF and verify submission access after reconciliation.
+
+## First integration milestone — Q4 payment amount and share
 
 - [ ] Lam loads a representative subset of the shared snapshot through SSIS into the warehouse while Kiet builds the first cube measures. Include a multi-method payment, repeated items within a category or seller, an order spanning groups, and an order without a review.
-- [ ] Kiet processes the base cube. Both teammates reproduce one analysis from the same subset. Run its MDX query and open its Power BI report and Excel PivotTable from the other machine. Record matching results, connection settings, and any setup issues before scaling to the full dataset.
+- [ ] Kiet processes the base cube and implements Q4 using actual payment rows by method. Keep each method separate for orders with multiple payment types. Payment share divides each method's amount by the total across methods under the same non-method filters.
+- [ ] Both reproduce Q4 on the same four-order subset in SQL, SSAS Browser, Power BI, MDX, and an Excel PivotTable. Expected total: **BRL 400.00**; credit_card **BRL 255.54 (63.885%)**, boleto **BRL 126.54 (31.635%)**, voucher **BRL 17.92 (4.480%)**. Check unrounded values before display rounding and confirm shares total 100%. See [subset references](2_Dataset/INTEGRATION_SUBSET.md).
+- [ ] Open and refresh the Q4 report and PivotTable and run its MDX query from the other machine. Record the snapshot, database/cube, connection settings without secrets, filters, actual results, and setup issues. Save the SSAS project, PBIX, MDX, workbook, and screenshots in the matching `4_SSAS/` folders and link the evidence here.
+- [ ] After the subset agrees across tools and machines, repeat Q4 on the full snapshot and reconcile it with the [full SQL reference](3_SSIS/sql/reference_questions_01_05_results.txt). Keep subset evidence separate. This milestone is complete only when both checks have actual results and evidence; local ETL success alone does not complete it.
 - [ ] Maintain one shared checklist for all 10 questions with the measure, filters, sort order, expected SQL result, and evidence links for SSAS, Power BI, and MDX. Keep the subset and full-snapshot results distinct. Start with Q4 (payment share), Q6 (category reviews), and Q8 (seller order counts and reviews), then complete and reconcile the other seven. Save each query, its filter settings, and its actual result as work is completed.
 
 ## A — Lam
@@ -59,20 +85,20 @@ Mining can run in parallel once the CSV and data rules are available. The team t
 
 ## Handoffs and joint checks
 
-The table tracks the **full snapshot**. SQL references are saved locally; the other columns remain open until actual results and evidence are added. Apply the same filters and rounding in every tool. For the four-order test, use the separate [subset references](2_Dataset/INTEGRATION_SUBSET.md).
+The table tracks the **full snapshot**. MDX and the [Power BI reports](4_SSAS/README.md) use the reconciled SQL row values. The Browser screenshots show each analysis running against the cube. Use the separate [subset references](2_Dataset/INTEGRATION_SUBSET.md) for the four-order test.
 
 | Question and comparison | SQL reference | SSAS manual | Power BI | MDX |
 | --- | --- | --- | --- | --- |
-| Q1 Revenue and orders by year/quarter | [Q1–Q5](3_SSIS/sql/reference_questions_01_05_results.txt) | Pending | Pending | Pending |
-| Q2 Top 10 categories by revenue | [Q1–Q5](3_SSIS/sql/reference_questions_01_05_results.txt) | Pending | Pending | Pending |
-| Q3 Top 5 customer states | [Q1–Q5](3_SSIS/sql/reference_questions_01_05_results.txt) | Pending | Pending | Pending |
-| Q4 Payment amount and share | [Q1–Q5](3_SSIS/sql/reference_questions_01_05_results.txt) | Pending | Pending | Pending |
-| Q5 Monthly revenue and growth in 2017 | [Q1–Q5](3_SSIS/sql/reference_questions_01_05_results.txt) | Pending | Pending | Pending |
-| Q6 Category review averages, minimum 100 reviews | [Q6 and Q8](3_SSIS/sql/reference_questions_06_08_results.txt) | Pending | Pending | Pending |
-| Q7 Delivery and late rates by state | [Q7, Q9, Q10](3_SSIS/sql/reference_questions_07_09_10_results.txt) | Pending | Pending | Pending |
-| Q8 Top 10 sellers and order reviews | [Q6 and Q8](3_SSIS/sql/reference_questions_06_08_results.txt) | Pending | Pending | Pending |
-| Q9 Freight ratio by region, January–August | [Q7, Q9, Q10](3_SSIS/sql/reference_questions_07_09_10_results.txt) | Pending | Pending | Pending |
-| Q10 Payment by weekday and method | [Q7, Q9, Q10](3_SSIS/sql/reference_questions_07_09_10_results.txt) | Pending | Pending | Pending |
+| Q1 Revenue and orders by year/quarter | [Q1–Q5](3_SSIS/sql/reference_questions_01_05_results.txt) | [Browser](4_SSAS/SSAS_Project/Q01%20Browser%20Evidence.png) | Snapshot verified | [Verified](4_SSAS/MDX/results/Q01.csv) |
+| Q2 Top 10 categories by revenue | [Q1–Q5](3_SSIS/sql/reference_questions_01_05_results.txt) | [Browser](4_SSAS/SSAS_Project/Q02%20Browser%20Evidence.png) | Snapshot verified | [Verified](4_SSAS/MDX/results/Q02.csv) |
+| Q3 Top 5 customer states | [Q1–Q5](3_SSIS/sql/reference_questions_01_05_results.txt) | [Browser](4_SSAS/SSAS_Project/Q03%20Browser%20Evidence.png) | Snapshot verified | [Verified](4_SSAS/MDX/results/Q03.csv) |
+| Q4 Payment amount and share | [Q1–Q5](3_SSIS/sql/reference_questions_01_05_results.txt) | [Browser](4_SSAS/SSAS_Project/Q04%20Browser%20Evidence.png) | Snapshot verified | [Verified](4_SSAS/MDX/results/Q04.csv) |
+| Q5 Monthly revenue and growth in 2017 | [Q1–Q5](3_SSIS/sql/reference_questions_01_05_results.txt) | [Browser](4_SSAS/SSAS_Project/Q05%20Browser%20Evidence.png) | Snapshot verified | [Verified](4_SSAS/MDX/results/Q05.csv) |
+| Q6 Category review averages, minimum 100 reviews | [Q6 and Q8](3_SSIS/sql/reference_questions_06_08_results.txt) | [Browser](4_SSAS/SSAS_Project/Q06%20Browser%20Evidence.png) | Snapshot verified | [Verified](4_SSAS/MDX/results/Q06.csv) |
+| Q7 Delivery and late rates by state | [Q7, Q9, Q10](3_SSIS/sql/reference_questions_07_09_10_results.txt) | [Browser](4_SSAS/SSAS_Project/Q07%20Browser%20Evidence.png) | Snapshot verified | [Verified](4_SSAS/MDX/results/Q07.csv) |
+| Q8 Top 10 sellers and order reviews | [Q6 and Q8](3_SSIS/sql/reference_questions_06_08_results.txt) | [Browser](4_SSAS/SSAS_Project/Q08%20Browser%20Evidence.png) | Snapshot verified | [Verified](4_SSAS/MDX/results/Q08.csv) |
+| Q9 Freight ratio by region, January–August | [Q7, Q9, Q10](3_SSIS/sql/reference_questions_07_09_10_results.txt) | [Browser](4_SSAS/SSAS_Project/Q09%20Browser%20Evidence.png) | Snapshot verified | [Verified](4_SSAS/MDX/results/Q09.csv) |
+| Q10 Payment by weekday and method | [Q7, Q9, Q10](3_SSIS/sql/reference_questions_07_09_10_results.txt) | [Browser](4_SSAS/SSAS_Project/Q10%20Browser%20Evidence.png) | Snapshot verified | [Verified](4_SSAS/MDX/results/Q10.csv) |
 
 For each completed cell, replace `Pending` with an evidence link and record any additional filters, sort order, and discrepancies. The SQL files contain the exact definitions and ordering. Reconcile at least three selected Excel Pivot analyses separately and link the workbook and results here when available.
 

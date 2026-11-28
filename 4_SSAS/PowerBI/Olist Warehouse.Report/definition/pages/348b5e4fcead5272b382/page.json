@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "348b5e4fcead5272b382",
+  "displayName": "Q06 Lowest category reviews",
+  "displayOption": "FitToPage",
+  "width": 1120,
+  "height": 700
+}

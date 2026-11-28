@@ -1,0 +1,3 @@
+SELECT {[Measures].[Revenue], [Measures].[Order Count]} ON 0,
+Hierarchize(Union([Date].[Calendar].[Year].Members, [Date].[Calendar].[Quarter].Members)) ON 1
+FROM [Olist]

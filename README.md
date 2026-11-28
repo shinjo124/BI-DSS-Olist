@@ -1,6 +1,6 @@
 # Olist BI Project
 
-This repository contains the project handoff, dataset profile, warehouse and measure specification, and team plan for a two-person BI final project. The Olist dataset has been profiled. Two alternative SSIS packages load the same warehouse: one uses native SSIS Data Flows and the other uses Python plus sqlcmd. The native SSIS package, SQL warehouse load, and exploratory K-Means run have been tested locally; the SSAS cube, reports, and cross-machine integration remain open. No deadline has been set.
+This two-person BI project analyzes the checked Brazilian Olist e-commerce snapshot. Two alternative SSIS packages load the documented warehouse. The SSAS cube has processed locally, all ten MDX analyses match SQL, and three live Excel PivotTables have been verified. Power BI has an editable warehouse project and a separate live SSAS project. Both mining experiments and the DOCX/PDF report are available. Cross-machine integration and submission access remain open. No deadline has been set.
 
 ## Start here
 
@@ -10,6 +10,8 @@ This repository contains the project handoff, dataset profile, warehouse and mea
 4. [Dataset profile](2_Dataset/DATASET_PROFILE.md) — source, snapshot hash, data quality checks, and mining cohort sizes.
 5. [Olist outline in English](references/OLIST_OUTLINE_EN.md) — English working version of the original proposal.
 6. [Original outline](references/Original-Olist-Outline.docx) — preserved source document.
+7. [Cube, MDX, Excel and Power BI](4_SSAS/README.md) — setup, deliverables, and local verification.
+8. [Report PDF](1_Report/Olist%20Business%20Intelligence%20Report.pdf) and [editable Word report](1_Report/Olist%20Business%20Intelligence%20Report.docx).
 
 ## Dataset
 
@@ -21,4 +23,4 @@ The Drive has the submission folders `1_Report/`, `2_Dataset/`, `3_SSIS/`, `4_SS
 
 Setup and test instructions for both alternative SSIS packages are in [3_SSIS/README.md](3_SSIS/README.md). Use one package per warehouse refresh; they are not sequential stages. The [K-Means README](5_DataMining/README.md) documents its environment, run commands, and findings. The saved native package loaded the full snapshot successfully in the local Visual Studio debugger; second-machine verification remains open.
 
-The [integration subset](2_Dataset/INTEGRATION_SUBSET.md) contains the first cube-check references. [Lam's report draft](1_Report/DRAFT_LAM_SECTIONS.md) is working material and still needs the remaining team results and final review.
+The [integration subset](2_Dataset/INTEGRATION_SUBSET.md) contains the first cube-check references. The [report source](1_Report/DRAFT_LAM_SECTIONS.md) contains the combined analysis and mining write-up.

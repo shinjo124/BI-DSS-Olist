@@ -1,4 +1,5 @@
 .vs/
+.pbi/
 bin/
 obj/
 .venv/
@@ -12,3 +13,6 @@ __pycache__/
 BI_CURRENT_STATE_ASSESSMENT.md
 olist-download.zip
 2_Dataset/raw/
+5_DataMining/results/random_forest/model.joblib
+/Olist BI Submission.zip
+/references/Olist Power BI archive/

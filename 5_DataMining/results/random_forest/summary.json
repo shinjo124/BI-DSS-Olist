@@ -1,0 +1,119 @@
+{
+  "prediction_time": "delivery",
+  "target": "selected review score <=2",
+  "seed": 42,
+  "train_cutoff": "2018-04-01",
+  "test_cutoff": "2018-07-01",
+  "snapshot_exclusive": "2018-10-18",
+  "cohort": {
+    "scoped_orders": 98199,
+    "cohort_orders": 91170,
+    "cohort_excluded": 7029,
+    "low_reviews": 8629
+  },
+  "cutoff_exclusions": {
+    "train_labels_after_cutoff": 625,
+    "validation_labels_after_cutoff": 771,
+    "test_labels_unavailable_at_snapshot": 6,
+    "deliveries_at_or_after_snapshot": 0
+  },
+  "split_counts": {
+    "train": {
+      "orders": 56818,
+      "low_reviews": 5511
+    },
+    "validation": {
+      "orders": 19203,
+      "low_reviews": 1832
+    },
+    "test": {
+      "orders": 13747,
+      "low_reviews": 1131
+    }
+  },
+  "features": [
+    "delivery_days",
+    "late_days",
+    "expected_delivery_days",
+    "price",
+    "freight",
+    "item_count",
+    "seller_count",
+    "category_count",
+    "purchase_month",
+    "purchase_weekday",
+    "customer_state"
+  ],
+  "metrics": {
+    "random_forest_validation": {
+      "orders": 19203,
+      "positives": 1832,
+      "threshold": 0.55,
+      "precision": 0.2695536897923111,
+      "recall": 0.3329694323144105,
+      "f1": 0.2979242979242979,
+      "roc_auc": 0.6683638047802906,
+      "average_precision": 0.23019441276015906,
+      "confusion_matrix_tn_fp_fn_tp": [
+        15718,
+        1653,
+        1222,
+        610
+      ]
+    },
+    "random_forest_test": {
+      "orders": 13747,
+      "positives": 1131,
+      "threshold": 0.55,
+      "precision": 0.25146771037182,
+      "recall": 0.22723253757736517,
+      "f1": 0.23873664653971202,
+      "roc_auc": 0.6259269943097814,
+      "average_precision": 0.18035163635537543,
+      "confusion_matrix_tn_fp_fn_tp": [
+        11851,
+        765,
+        874,
+        257
+      ]
+    },
+    "majority_baseline_test": {
+      "orders": 13747,
+      "positives": 1131,
+      "threshold": 0.5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "roc_auc": 0.5,
+      "average_precision": 0.08227249581726923,
+      "confusion_matrix_tn_fp_fn_tp": [
+        12616,
+        0,
+        1131,
+        0
+      ]
+    }
+  },
+  "source_sha256": {
+    "olist_customers_dataset.csv": "983a422239e1712ded753b3bf9ecf47dc73f144d306029dcfa99e70a226883d2",
+    "olist_geolocation_dataset.csv": "b514f6fc991b9566aeba02aa5d67e2c3630f034b60a0e05aa0d082a3b66d88d6",
+    "olist_order_items_dataset.csv": "0bc4d068c4fe38cbb01bd90e8746e3c613fe7b4baef75fab7b0e329701c3e279",
+    "olist_order_payments_dataset.csv": "4f713964f2815dbbaa40b9488268c55aac3627bfce5aa96cf58d1f3616de3cc0",
+    "olist_order_reviews_dataset.csv": "012b61c7593e34f51fa614efdf802b9c7056ce6aae5307ddb93236e7cfc797d7",
+    "olist_orders_dataset.csv": "8df58ef3d2d7e9944010f7beecd9b75367f5588ec6e3c91cec19ae3345ef9ecf",
+    "olist_products_dataset.csv": "3e6569628a17fbc75fd206ee357b59e20364b9afa90f5b6cd5b4d624c58aa9cc",
+    "olist_sellers_dataset.csv": "1f643d2b950373b85735e7794b20986f528d7a000432e7c6f9bcbb44d0846a0e"
+  },
+  "versions": {
+    "python": "3.13.2",
+    "pandas": "3.1.1",
+    "sklearn": "1.9.1"
+  },
+  "limitations": [
+    "Review answer time is an imperfect label-availability proxy.",
+    "Latest review selection uses the final snapshot; historical revisions cannot be reconstructed.",
+    "No causal or production-readiness claims; test period is short and historical.",
+    "Customer state and product categories are snapshot attributes without change histories.",
+    "Threshold maximizes validation F1; business intervention costs are unknown."
+  ]
+}

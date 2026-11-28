@@ -1,0 +1,3 @@
+SELECT {[Measures].[Payment Amount]} ON 0,
+NonEmpty([Date].[Weekday].[Weekday].Members * [Payment].[Payment].[Payment].Members,[Measures].[Payment Amount]) ON 1
+FROM [Olist]

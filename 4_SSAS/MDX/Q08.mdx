@@ -1,0 +1,3 @@
+SELECT {[Measures].[Revenue], [Measures].[Order Count], [Measures].[Avg Review]} ON 0,
+NonEmpty(TopCount([Seller].[Seller].[Seller].Members,10,[Measures].[Revenue]) * [Seller].[State].[State].Members,[Measures].[Revenue]) ON 1
+FROM [Olist]

@@ -1,0 +1,3 @@
+SELECT {[Measures].[Payment Amount], [Measures].[Payment Share]} ON 0,
+Order([Payment].[Payment].[Payment].Members,[Measures].[Payment Amount],BDESC) ON 1
+FROM [Olist]

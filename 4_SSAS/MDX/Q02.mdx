@@ -1,0 +1,3 @@
+SELECT {[Measures].[Revenue], [Measures].[Quantity]} ON 0,
+TopCount([Product].[Category].[Category].Members,10,[Measures].[Revenue]) ON 1
+FROM [Olist]

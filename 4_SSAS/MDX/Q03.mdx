@@ -1,0 +1,3 @@
+SELECT {[Measures].[Revenue], [Measures].[Order Count], [Measures].[Avg Order Value]} ON 0,
+TopCount([Customer].[State].[State].Members,5,[Measures].[Revenue]) ON 1
+FROM [Olist]

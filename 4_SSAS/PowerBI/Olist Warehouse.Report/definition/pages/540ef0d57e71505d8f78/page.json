@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "540ef0d57e71505d8f78",
+  "displayName": "Q10 Payment amount by weekday",
+  "displayOption": "FitToPage",
+  "width": 1120,
+  "height": 700
+}

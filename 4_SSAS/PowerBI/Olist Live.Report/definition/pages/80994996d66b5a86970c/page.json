@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "80994996d66b5a86970c",
+  "displayName": "Q04 Payment method share",
+  "displayOption": "FitToPage",
+  "width": 1120,
+  "height": 700
+}

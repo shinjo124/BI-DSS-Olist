@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "76326bf2a63b5f7da055",
+  "displayName": "Q09 Freight ratio by region",
+  "displayOption": "FitToPage",
+  "width": 1120,
+  "height": 700
+}

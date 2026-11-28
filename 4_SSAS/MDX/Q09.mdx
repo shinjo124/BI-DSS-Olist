@@ -1,0 +1,3 @@
+SELECT {[Measures].[Revenue], [Measures].[Freight Value], [Measures].[Freight Ratio]} ON 0,
+{[Date].[Year].&[2017],[Date].[Year].&[2018]} * [Customer].[Region].[Region].Members ON 1
+FROM (SELECT {[Date].[Month Number].&[1]:[Date].[Month Number].&[8]} ON 0 FROM [Olist])

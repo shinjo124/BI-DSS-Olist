@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "76b7748c57fc55cf9794",
+  "position": {
+    "x": 34,
+    "y": 335,
+    "z": 0,
+    "width": 1052,
+    "height": 338,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimDate"
+                    }
+                  },
+                  "Property": "ISOWeekdayName"
+                }
+              },
+              "queryRef": "DimDate.ISOWeekdayName",
+              "nativeQueryRef": "Weekday",
+              "displayName": "Weekday"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimPayment"
+                    }
+                  },
+                  "Property": "PaymentType"
+                }
+              },
+              "queryRef": "DimPayment.PaymentType",
+              "nativeQueryRef": "Payment method",
+              "displayName": "Payment method"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "FactPayment"
+                    }
+                  },
+                  "Property": "Q10 Payment Amount"
+                }
+              },
+              "queryRef": "FactPayment.Q10 Payment Amount",
+              "nativeQueryRef": "Payment Amount",
+              "displayName": "Payment Amount"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "DimDate"
+                  }
+                },
+                "Property": "ISOWeekdayName"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Detailed results'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

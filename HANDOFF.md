@@ -1,5 +1,7 @@
 # Project Handoff — 17 November 2026
 
+**Current as of 28 November 2026:** the cube, ten MDX queries, local PivotTables, Power BI snapshot, both mining implementations and the report files are available. Setup and evidence are in the [cube guide](4_SSAS/README.md), the [mining guide](5_DataMining/README.md), and the [current project plan](PROJECT_PLAN.md). The notes below preserve the earlier handoff.
+
 ## Goal and submission requirements
 
 The two-person team must submit a report of no more than 100 pages covering the SSIS data selection and loading process, schema and cube construction, analysis and reports for 10 questions using SSAS and Power BI, MDX analysis, Excel PivotTable analysis, and two data-mining algorithms. The Google Drive submission must contain DOCX and PDF reports, the dataset, SSIS project, SSAS project with Power BI and Excel files, and mining code. Videos are optional. Share the submission with `phungntk@uit.edu.vn`.
